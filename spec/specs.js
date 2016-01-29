@@ -62,7 +62,7 @@ describe("Seasoning", function() {
 });
 
 describe("getPizzaPrice", function () {
-  it("returns additional cost of sauce items", function () {
+  it("returns additional cost of pizza items", function () {
     var sauce = new Sauce("", ["Spicy"], "");
     var cheese = new Cheese("", ["Chevre"], "");
     var veggies = new Veggies("", ["Gnome Onions"], "");
@@ -71,6 +71,6 @@ describe("getPizzaPrice", function () {
     var size = new Size("", ["Princess"], "");
 
     var pizza = new FlipPizza(sauce, cheese, veggies, meat, seasoning, size);
-    expect(getPizzaPrice(pizza)).to.equal(5);
+    expect(getPizzaPrice(pizza)).to.equal(5.5);
   });
 });

@@ -11,8 +11,64 @@
     <title></title>
   </head>
   <body>
-    <div class="container">
-
+    <div class="container-fluid">
+      <div class="row row-header">
+        <h1>Giogiornos Pizza Joint</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6 create-pizza">
+          <h2>Choose your toppings</h2>
+        </div>
+        <div class="col-md-6 confirm-order">
+          <button class="btn btn-lg" type="submit">Confirm Order</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 topping-select">
+          <form id="newPizza">
+            <div class="col-md-5 sauce">
+              <h4>Sauces: </h4>
+            </div>
+            <div class="col-md-7 sauce">
+              <input class="incl" type="checkbox" name="sauce">Marinara
+              <input class="incl" type="checkbox" name="sauce">Pesto
+              <input class="incl" type="checkbox" name="sauce">BBQ<br>
+              <input class="plus" type="checkbox" name="sauce">Special Spicy<br>
+              <input class="free" type="checkbox" name="sauce">None<br>
+            </div>
+            <div class="col-md-5 cheese">
+              <h4>Sauces: </h4>
+            </div>
+            <div class="col-md-7 cheese">
+              <input class="incl" type="checkbox" name="cheese">Mozerella
+              <input class="incl" type="checkbox" name="cheese">Ricotta
+              <input class="incl" type="checkbox" name="cheese">Chedder<br>
+              <input class="plus" type="checkbox" name="cheese">Chevre
+              <input class="plus" type="checkbox" name="cheese">Zeus's Sheep<br>
+              <input class="free" type="checkbox" name="cheese">None<br>
+            </div>
+            <div class="col-md-7 veggies">
+              <input class="incl" type="checkbox" name="veggies">Black Olives
+              <input class="incl" type="checkbox" name="veggies">Green Peppers
+              <input class="incl" type="checkbox" name="veggies">Peppercinis
+              <input class="incl" type="checkbox" name="veggies">Red Onions
+              <input class="incl" type="checkbox" name="veggies">Tomatoes
+              <input class="incl" type="checkbox" name="veggies">Pineapple
+              <input class="incl" type="checkbox" name="veggies">Kale
+              <input class="incl" type="checkbox" name="veggies">Crimini Mushrooms
+              <input class="incl" type="checkbox" name="veggies">Green Onions<br>
+              <input class="plus" type="checkbox" name="veggies">Artichoke Hearts
+              <input class="plus" type="checkbox" name="veggies">Shitake Mushrooms
+              <input class="plus" type="checkbox" name="veggies">Acai<br>
+              <input class="free" type="checkbox" name="veggies">None<br>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 pizza-info">
+          <p>yummy yummmy</p>
+        </div>
+      </div>
+      </div>
     </div>
   </body>
 </html>

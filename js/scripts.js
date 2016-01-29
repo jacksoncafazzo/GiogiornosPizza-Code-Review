@@ -46,7 +46,11 @@ function Size (personal, small, regular, plus, xtraplus) {
 }
 
 function getPizzaPrice (pizza) {
-  debugger;
-  return Object.keys(pizza.sauce.plus).length + Object.keys(pizza.cheese.plus).length + Object.keys(pizza.meat.plus).length + Object.keys(pizza.veggies.plus).length + Object.keys(pizza.seasoning.plus).length;
-   
+  return Object.keys(pizza.sauce.plus).length + Object.keys(pizza.cheese.plus).length + Object.keys(pizza.meat.plus).length + (Object.keys(pizza.veggies.plus).length * 0.5) + (Object.keys(pizza.seasoning.plus).length * 2);
 }
+
+$(document).ready(function () {
+  $("#newPizza").submit(function () {
+    
+  })
+})

@@ -1,0 +1,33 @@
+html, body {
+    height: 100%
+}
+
+.container {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.row-header {
+  background: cyan;
+}
+
+.create-pizza {
+  background: red;
+  min-height: 100%;
+}
+
+.confirm-order {
+  background: red;
+}
+
+.topping-select {
+  margin-bottom: -750px;
+  padding-bottom: 750px;
+  background: green;
+}
+
+.pizza-info {
+  margin-bottom: -750px;
+  padding-bottom: 750px;
+  background: grey;
+}

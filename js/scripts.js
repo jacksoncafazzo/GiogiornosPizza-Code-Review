@@ -47,6 +47,6 @@ function Size (personal, small, regular, plus, xtraplus) {
 
 function getPizzaPrice (pizza) {
   debugger;
-  var price = Object.keys(pizza.sauce.plus).length;
-   return pizza.sauce.plus.keys().length + pizza.cheese.plus.keys().length + pizza.meat.plus.keys().length + pizza.veggies.plus.keys().length + pizza.seasoning.plus.keys().length;
+  return Object.keys(pizza.sauce.plus).length + Object.keys(pizza.cheese.plus).length + Object.keys(pizza.meat.plus).length + Object.keys(pizza.veggies.plus).length + Object.keys(pizza.seasoning.plus).length;
+   
 }

@@ -1,26 +1,26 @@
 describe("FlipPizza", function() {
   it("creates a Pizza object of customer selections", function() {
-    var sauce = new Sauce("", "Spicy", "");
-    var cheese = new Cheese("", "Chevre", "");
-    var veggies = new Veggies("", "Gnome Onions", "");
-    var meat = new Meat("", "Anchovies", "");
-    var seasoning = new Seasoning("", "Magic", "");
-    var size = new Size("", "Princess", "");
-    var pizza = new FlipPizza(sauce,cheese,meat,veggies,seasoning,size);
-    expect(pizza.sauce).to.equal("Spicy");
-    expect(pizza.cheese).to.equal("Chevre");
-    expect(pizza.veggies).to.equal("Gnome Onions");
-    expect(pizza.meat).to.equal("Anchovies");
-    expect(pizza.seasoning).to.equal("Magic");
-    expect(pizza.pizzaSize).to.equal("Princess");
+    var sauce = new Sauce("", ["Spicy"], "");
+    var cheese = new Cheese("", ["Chevre"], "");
+    var veggies = new Veggies("", ["Gnome Onions"], "");
+    var meat = new Meat("", ["Anchovies"], "");
+    var seasoning = new Seasoning("", ["Magic"], "");
+    var size = new Size("", ["Princess"], "");
+    var pizza = new FlipPizza(sauce, cheese, meat, veggies, seasoning, size);
+    expect(pizza.sauce.plus).to.eql(["Spicy"]);
+    expect(pizza.cheese.plus).to.eql(["Chevre"]);
+    expect(pizza.veggies.plus).to.eql(["Gnome Onions"]);
+    expect(pizza.meat.plus).to.eql(["Anchovies"]);
+    expect(pizza.seasoning.plus).to.eql(["Magic"]);
+    expect(pizza.pizzaSize.small).to.eql(["Princess"]);
   });
 });
 
 describe("Sauce", function() {
   it("creates a Sauce sorted by price", function() {
-    var sauce = new Sauce("Marinara","Spicy","None");
+    var sauce = new Sauce("Marinara",["Spicy", "Not Spicy"],"None");
     expect(sauce.regular).to.equal("Marinara");
-    expect(sauce.plus).to.equal("Spicy");
+    expect(sauce.plus).to.eql(["Spicy", "Not Spicy"]);
     expect(sauce.less).to.equal("None");
     });
 });

@@ -51,6 +51,12 @@ function getPizzaPrice (pizza) {
 
 $(document).ready(function () {
   $("#newPizza").submit(function () {
-    
-  })
-})
+
+  });
+
+  $("#noSeasoning").click(function() {
+    $("input:checkbox").attr('checked', 'checked');
+    $('.seasoning').val('uncheck all');
+
+});
+});

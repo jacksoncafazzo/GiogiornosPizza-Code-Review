@@ -17,7 +17,7 @@
       </div>
       <div class="row">
         <div class="col-md-6 create-pizza">
-          <h2>Choose your toppings</h2>
+          <h2>Choose your personalized pizza options here</h2>
         </div>
         <div class="col-md-6 confirm-order">
           <button class="btn btn-lg" type="submit">Confirm Order</button>
@@ -26,42 +26,131 @@
       <div class="row">
         <div class="col-md-6 topping-select">
           <form id="newPizza">
-            <div class="col-md-5 sauce">
-              <h4>Sauces: </h4>
+            <div class="row">
+              <div class="col col-md-3 type-of-item">
+                <h4>Sauces: </h4>
+              </div>
+              <div class="col col-md-9 type-of-item">
+                <div class="row sauce">
+                  <div class="col-md-5 incl">
+                    <input type="checkbox" name="sauce"> Marinara<br>
+                    <input type="checkbox" name="sauce"> Pesto<br>
+                    <input type="checkbox" name="sauce"> BBQ<br>
+                  </div>
+                  <div class="col col-md-5 plus">
+                    <input type="checkbox" name="sauce"> Special Spicy<br>
+                    <input type="checkbox" name="sauce"> Secret Louisiana<br>
+                  </div>
+                  <div class="col col-md-2 free">
+                    <input class="free" type="checkbox" name="sauce"> None<br>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-7 sauce">
-              <input class="incl" type="checkbox" name="sauce">Marinara
-              <input class="incl" type="checkbox" name="sauce">Pesto
-              <input class="incl" type="checkbox" name="sauce">BBQ<br>
-              <input class="plus" type="checkbox" name="sauce">Special Spicy<br>
-              <input class="free" type="checkbox" name="sauce">None<br>
+            <div class="row cheese">
+              <div class="col col-md-3 type-of-item">
+                <h4>Cheeses: </h4>
+              </div>
+              <div class="col col-md-9 type-of-item">
+                <div class="row">
+                  <div class="col col-md-5 incl">
+                    <input type="checkbox" name="cheese"> Mozerella<br>
+                    <input type="checkbox" name="cheese"> Ricotta<br>
+                    <input type="checkbox" name="cheese"> Chedder<br>
+                  </div>
+                  <div class="col col-md-5 plus">
+                    <input type="checkbox" name="cheese"> Chevre<br>
+                    <input type="checkbox" name="cheese"> Zeus's Sheep<br>                  </div>
+                  <div class="col col-md-2 free">
+                    <input type="checkbox" name="cheese"> None<br>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-5 cheese">
-              <h4>Sauces: </h4>
+            <div class="row veggies">
+              <div class="col col-md-3 type-of-item">
+                <h4>Veggies: </h4>
+              </div>
+              <div class="col col-md-9 type-of-item">
+                <div class="row">
+                  <div class="col col-md-5 incl">
+                    <input type="checkbox" name="veggies"> Black Olives<br>
+                    <input type="checkbox" name="veggies"> Green Peppers<br>
+                    <input type="checkbox" name="veggies"> Peppercinis<br>
+                    <input type="checkbox" name="veggies"> Red Onions<br>
+                    <input type="checkbox" name="veggies"> Tomatoes<br>
+                    <input type="checkbox" name="veggies"> Pineapple<br>
+                    <input type="checkbox" name="veggies"> Kale<br>
+                    <input type="checkbox" name="veggies"> Crimini Mushrooms<br>
+                    <input type="checkbox" name="veggies"> Green Onions<br>
+                  </div>
+                  <div class="col col-md-5 plus">
+                    <input type="checkbox" name="veggies"> Artichoke Hearts<br>
+                    <input type="checkbox" name="veggies"> Shitake Mushrooms<br>
+                    <input type="checkbox" name="veggies"> Acai<br>
+                  </div>
+                  <div class="col col-md-2 free">
+                    <input type="checkbox" name="veggies"> None<br>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-7 cheese">
-              <input class="incl" type="checkbox" name="cheese">Mozerella
-              <input class="incl" type="checkbox" name="cheese">Ricotta
-              <input class="incl" type="checkbox" name="cheese">Chedder<br>
-              <input class="plus" type="checkbox" name="cheese">Chevre
-              <input class="plus" type="checkbox" name="cheese">Zeus's Sheep<br>
-              <input class="free" type="checkbox" name="cheese">None<br>
+            <div class="row meat">
+              <div class="col col-md-3 type-of-item">
+                <h4>Meats: </h4>
+              </div>
+              <div class="col col-md-9 type-of-item">
+                <div class="row">
+                  <div class="col col-md-5 incl">
+                    <input type="checkbox" name="meats"> Pepperoni<br>
+                    <input type="checkbox" name="meats"> Italian Sausage<br>
+                    <input type="checkbox" name="meats"> BBQ Chicken<br>
+                    <input type="checkbox" name="meats"> Taco<br>
+                    <input type="checkbox" name="meats"> Smoked Ham<br>
+                    <input type="checkbox" name="meats"> Mortadella<br>
+                    <input type="checkbox" name="meats"> Anchovies<br>
+                    <input type="checkbox" name="meats"> Bay Shrimp<br>
+                  </div>
+                  <div class="col col-md-5 plus">
+                    <input type="checkbox" name="meats"> Proscuitto<br>
+                    <input type="checkbox" name="meats"> Elk<br>
+                    <input type="checkbox" name="meats"> Koala<br>
+                    <input type="checkbox" name="meats"> Scallops<br>
+                  </div>
+                  <div class="col col-md-2 free">
+                    <input type="checkbox" name="meats"> None<br>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-7 veggies">
-              <input class="incl" type="checkbox" name="veggies">Black Olives
-              <input class="incl" type="checkbox" name="veggies">Green Peppers
-              <input class="incl" type="checkbox" name="veggies">Peppercinis
-              <input class="incl" type="checkbox" name="veggies">Red Onions
-              <input class="incl" type="checkbox" name="veggies">Tomatoes
-              <input class="incl" type="checkbox" name="veggies">Pineapple
-              <input class="incl" type="checkbox" name="veggies">Kale
-              <input class="incl" type="checkbox" name="veggies">Crimini Mushrooms
-              <input class="incl" type="checkbox" name="veggies">Green Onions<br>
-              <input class="plus" type="checkbox" name="veggies">Artichoke Hearts
-              <input class="plus" type="checkbox" name="veggies">Shitake Mushrooms
-              <input class="plus" type="checkbox" name="veggies">Acai<br>
-              <input class="free" type="checkbox" name="veggies">None<br>
+            <div class="row seasoning" >
+              <div class="col col-md-3 type-of-item" >
+                <h4>Seasoning: </h4>
+              </div>
+              <div class="col col-md-9 type-of-item">
+                <form id="seasoning">
+                  <div class="row">
+                    <div class="col col-md-5 incl">
+                      <input type="checkbox" name="seasoning"> Parmesean Cheese<br>
+                      <input type="checkbox" name="seasoning"> Basil<br>
+                      <input type="checkbox" name="seasoning"> Oregano<br>
+                      <input type="checkbox" name="seasoning"> Taco<br>
+                      <input type="checkbox" name="seasoning"> Red Pepper Flakes<br>
+                    </div>
+                    <div class="col col-md-5 plus">
+                      <input type="checkbox" name="seasoning"> Jacobson Sea Salt<br>
+                      <input type="checkbox" name="seasoning"> Turkish Sumac blend<br>
+                      <input type="checkbox" name="seasoning"> Koala Extract<br>
+                      <input type="checkbox" name="seasoning"> Ranch<br>
+                    </div>
+                    <div class="col col-md-2 free" >
+                      <input type="checkbox" name="seasoning" id="noSeasoning"> None<br>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
+
           </form>
         </div>
         <div class="col-md-6 pizza-info">

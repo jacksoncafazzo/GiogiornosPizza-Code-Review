@@ -11,6 +11,10 @@ html, body {
   background: cyan;
 }
 
+.type-of-item h4 {
+  font-weight: bold;
+}
+
 .create-pizza {
   background: red;
   min-height: 100%;
@@ -20,10 +24,13 @@ html, body {
   background: red;
 }
 
-.topping-select {
-  margin-bottom: -750px;
-  padding-bottom: 750px;
+.topping-select  {
+
   background: green;
+}
+
+.topping-select  {
+  padding: 20px;
 }
 
 .pizza-info {

@@ -1,7 +1,7 @@
 # Giogiornos Pizza
 ##### Subtitle
 
-#### By Jessica Fix
+#### By Jackson Cafazzo
 
 ## Description
 

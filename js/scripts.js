@@ -75,28 +75,40 @@ FlipPizza.prototype.getPizzaPrice = function () {
 
 
 $(document).ready(function () {
+  $(".sauce").click(function () {
+    $(".currentSauce").append('<li>' + this.name + '</li>')
+  });
+
+  $("#showPizza").submit(function () {
+
+  });
+
   $("#newPizza").submit(function () {
 
   });
 
   $("#noSauce").click(function() {
+    $(".sauce-info").empty();
     $("input:checkbox.sauce").attr('checked', false);
   });
 
   $("#noCheese").click(function() {
+    $(".sauce-info").empty();
     $("input:checkbox.cheese").attr('checked', false);
   });
 
   $("#noVeggies").click(function() {
+    $(".sauce-info").empty();
     $("input:checkbox.veggies").attr('checked', false);
   });
 
-
   $("#noMeats").click(function() {
+    $(".sauce-info").empty();
     $("input:checkbox.meats").attr('checked', false);
   });
 
   $("#noSeasoning").click(function() {
+    $(".sauce-info").empty();
     $("input:checkbox.seasoning").attr('checked', false);
   });
 });

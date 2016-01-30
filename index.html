@@ -12,18 +12,22 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row row-header">
-        <h1>Giogiornos Pizza Joint</h1>
-      </div>
-      <div class="row">
-        <div class="col-md-6 create-pizza">
-          <h2>Choose your personalized pizza options here</h2>
+      <form id="newPizza">
+        <div class="row row-header">
+          <div class="col-md-12">
+            <h1>Giogiornos Pizza Joint</h1>
+          </div>
         </div>
-        <div class="col-md-6 confirm-order">
+        <div class="row">
+          <div class="col-md-6 create-pizza">
+            <h2>Choose your personalized pizza options here</h2>
+          </div>
+          <div class="col-md-6 confirm-order">
+            <h1>Your Current Pizza</h1>
+
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <form id="newPizza">
+        <div class="row">
           <div class="col-md-6 topping-select">
             <div class="row sauce-row">
               <div class="col col-md-3 type-of-item">
@@ -165,92 +169,69 @@
           </div>
           <div class="col-md-6">
             <div class="row">
-              <div class="col-md-12 pizza-info">
-                <h1>Your Current Pizza</h1>
-              </div>
-            </div>
-            <div class="row">
               <div class="col-md-5 pizza-info">
                 <p>Sauce Selection:</p>
-              </div>
-              <div class="col-md-8 sauce-info">
                 <ul>
-                  <span class="currentSauce">
-                    <li>Marinara</li>
-                  </span>
+                <span class="currentSauce">
+                <li>Marinara</li>
+                </span>
                 </ul>
+                <div class="cheese-info">
+                  <p>Cheese Selection:</p>
+                  <ul>
+                    <span class="currentCheese">
+                      <li>Mozerella</li>
+                    </span>
+                  </ul>
+                </div>
+                <div class="veggies-info">
+                  <p>Veggies Selection:</p>
+                  <ul>
+                    <span class="currentVeggies">
+                      <li>Black Olives</li>
+                      <li>Red Onions</li>
+                    </span>
+                  </ul>
+                </div>
+                <div class="meats-info">
+                  <p>Meat Selection:</p>
+                  <ul>
+                    <span class="currentMeats">
+                      <li>Smoked Ham</li>
+                    </span>
+                  </ul>
+                </div>
+                <div class="seasoning-info">
+                  <p>Seasoning Selection:</p>
+                  <ul>
+                    <span class="currentSeasoning">
+                      <li>Parmesean Cheese</li>
+                    </span>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-7 pizza-info">
+                <div class="choosingSize">
+                  <p>Choose Pizza Size:</p>
+                  <label class="radio"><input type="radio" name="choosingSize" val="Toad">Toad</label>
+                  <label class="radio"><input type="radio" name="choosingSize" val="Princess">Princess</label>
+                  <label class="radio"><input type="radio" name="choosingSize" val="Yoshi">Yoshi</label>
+                  <label class="radio"><input type="radio" name="choosingSize" val="Mario">Mario</label>
+                  <label class="radio"><input type="radio" name="choosingSize" val="Bowser">Bowser</label>
+                  <p>Sauce extras: $<span class="sauceTotal"></span></p>
+                  <p>Cheese extras: $<span class="cheeseTotal"></span></p>
+                  <p>Veggies extras: $<span class="veggiesTotal"></span></p>
+                  <p>Meats extras: $<span class="meatsTotal"></span></p>
+                  <p>Seasonings extras: $<span class="seasoningTotal"></span></p>
+                  <br>
+                  <p class="totalAmount">Total Amount: $<span class="total"></span></p>
+                  <button class="btn btn-lg" type="submit">Confirm Order</button>
+                </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-5 pizza-info">
-                <p>Cheese Selection:</p>
-              </div>
-              <div class="col-md-8 cheese-info">
-                <ul>
-                  <span class="currentCheese">
-                    <li>Mozerella</li>
-                  </span>
-                </ul>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5 pizza-info">
-                <p>Veggies Selection:</p>
-              </div>
-              <div class="col-md-8 veggies-info">
-                <ul>
-                  <span class="currentVeggies">
-                    <li>Black Olives</li>
-                    <li>Red Onions</li>
-                  </span>
-                </ul>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5 pizza-info">
-                <p>Meat Selection:</p>
-              </div>
-              <div class="col-md-8 meats-info">
-                <ul>
-                  <span class="currentMeats">
-                    <li>Smoked Ham</li>
-                  </span>
-                </ul>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5 pizza-info">
-                <p>Seasoning Selection:</p>
-              </div>
-              <div class="col-md-8 seasoning-info">
-                <ul>
-                  <span class="currentSeasoning">
-                    <li>Parmesean Cheese</li>
-                  </span>
-                </ul>
-              </div>
-            </div>
-            <div class="row totalsRow">
-              <p>Sauce extras: $<span class="sauceTotal"></span></p>
-              <p>Cheese extras: $<span class="cheeseTotal"></span></p>
-              <p>Veggies extras: $<span class="veggiesTotal"></span></p>
-              <p>Meats extras: $<span class="meatsTotal"></span></p>
-              <p>Seasonings extras: $<span class="seasoningTotal"></span></p>
-              <p>Choose Size:</p>
-              <div class="choosingSize">
-                <label class="radio"><input type="radio" name="choosingSize" val="Toad">Toad</label>
-                <label class="radio"><input type="radio" name="choosingSize" val="Princess">Princess</label>
-                <label class="radio"><input type="radio" name="choosingSize" val="Yoshi">Yoshi</label>
-                <label class="radio"><input type="radio" name="choosingSize" val="Mario">Mario</label>
-                <label class="radio"><input type="radio" name="choosingSize" val="Bowser">Bowser</label>
-              </div>
-              <br>
-              <p class="totalAmount">Total Amount: $<span class="total"></span></p>
-              <button class="btn btn-lg" type="submit">Confirm Order</button>
-            </div>
-          </form>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>

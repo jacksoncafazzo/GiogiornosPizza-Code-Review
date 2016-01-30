@@ -81,24 +81,24 @@ FlipPizza.prototype.getPizzaPrice = function () {
   return pizzaReturn
 }
 
-function getChecks (topping) {
-  var regular = [];
-  var plus = []
-  var toppings = {};
-  debugger;
-  var tempRegular = "" + topping + " input:checked";
-  var capitol = topping.charAt(0);
-  capitol = capitol.toUpperCase();
-  var plusString = capitol.concat(topping.slice(1));
-  var tempPlus = "plus" + plusString + " input:checked";
-  $("." + tempRegular + "").each(function () {
-    regular.push($(this).attr("name"));
-  });
-  $("" + tempPlus + "").each(function () {
-    plus.push($(this).attr("name"));
-  });
-  return regular, plus;
-}
+// function getChecks (topping) {
+//   var regular = [];
+//   var plus = []
+//   var toppings = {};
+//   debugger;
+//   var tempRegular = "" + topping + " input:checked";
+//   var capitol = topping.charAt(0);
+//   capitol = capitol.toUpperCase();
+//   var plusString = capitol.concat(topping.slice(1));
+//   var tempPlus = "plus" + plusString + " input:checked";
+//   $("." + tempRegular + "").each(function () {
+//     regular.push($(this).attr("name"));
+//   });
+//   $("" + tempPlus + "").each(function () {
+//     plus.push($(this).attr("name"));
+//   });
+//   return regular, plus;
+// }
 
 
 

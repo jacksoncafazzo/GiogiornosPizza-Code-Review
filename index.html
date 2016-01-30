@@ -12,20 +12,19 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row row-header">
-        <h1>Giogiornos Pizza Joint</h1>
-      </div>
-      <div class="row">
-        <div class="col-md-6 create-pizza">
-          <h2>Choose your personalized pizza options here</h2>
+      <form id="newPizza">
+        <div class="row row-header">
+          <h1>Giogiornos Pizza Joint</h1>
         </div>
-        <div class="col-md-6 confirm-order">
-          <button class="btn btn-lg" type="submit">Confirm Order</button>
+        <div class="row">
+          <div class="col-md-6 create-pizza">
+            <h2>Choose your personalized pizza options here</h2>
+          </div>
+          <div class="col-md-6 confirm-order">
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 topping-select">
-          <form id="newPizza">
+        <div class="row">
+          <div class="col-md-7 topping-select">
             <div class="row sauce-row">
               <div class="col col-md-3 type-of-item">
                 <h4>Sauces: </h4>
@@ -78,7 +77,7 @@
                 <h4>Veggies: </h4>
               </div>
               <div class="col col-md-9 type-of-item">
-                <div class="row veggies">
+                <div class="row veggies-row">
                   <div class="col col-md-5 incl">
                     <p>Included:</p>
                     <input class="veggies" type="checkbox" name="Black Olives"> Black Olives<br>
@@ -165,34 +164,76 @@
                 </form>
               </div>
             </div>
+          </div>
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-md-12 pizza-info">
+                <h1>Your Current Pizza</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pizza-info">
+                <p>Sauce Selection:</p>
+              </div>
+              <div class="col-md-8 sauce-info">
+                <ul>
+                  <span class="currentSauce"></span></p>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pizza-info">
+                <p>Cheese Selection:</p>
+              </div>
+              <div class="col-md-8 cheese-info">
+                <ul>
+                  <span class="currentCheese"></span></p>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pizza-info">
+                <p>Veggies Selection:</p>
+              </div>
+              <div class="col-md-8 veggies-info">
+                <ul>
+                  <span class="currentVeggies"></span></p>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pizza-info">
+                <p>Meat Selection:</p>
+              </div>
+              <div class="col-md-8 meats-info">
+                <ul>
+                  <span class="currentMeats"></span></p>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pizza-info">
+                <p>Seasoning Selection:</p>
+              </div>
+              <div class="col-md-8 seasoning-info">
+                <ul>
+                  <span class="currentSeasoning"></span></p>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <p class="sauceTotal">Sauce extras: $<span class="sauceTotal"></span></p>
+              <p class="cheeseTotal">Cheese extras: $<span class="cheeseTotal"></span></p>
+              <p class="veggiesTotal">Veggies extras: $<span class="veggiesTotal"></span></p>
+              <p class="meatsTotal">Meats extras: $<span class="meatsTotal"></span></p>
+              <p class="seasoningTotal">Seasonings extras: $<span class="seasoningTotal"></span></p>
+              
+
+              <br>
+              <p class="totalAmount">Total Amount: $<span class="total"></span></p>
+              <button class="btn btn-lg" type="submit">Confirm Order</button>
+            </div>
           </form>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12 pizza-info">
-              <h1>Your Current Pizza</h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-5 pizza-info">
-              <p>Sauce Selection:</p>
-            </div>
-            <div class="col-md-8 sauce-info">
-              <ul>
-                <span class="currentSauce"></span></p>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-5 pizza-info">
-              <p>Cheese Selection:</p>
-            </div>
-            <div class="col-md-8 pizza-info">
-              <ul>
-                <span class="currentCheese"></span></p>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </div>

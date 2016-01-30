@@ -79,13 +79,36 @@ $(document).ready(function () {
     $(".currentSauce").append('<li>' + this.name + '</li>')
   });
 
-  $("#showPizza").submit(function () {
-
+  $(".cheese").click(function () {
+    $(".currentCheese").append('<li>' + this.name + '</li>')
   });
 
-  $("#newPizza").submit(function () {
-
+  $(".veggies").click(function () {
+    $(".currentVeggies").append('<li>' + this.name + '</li>')
   });
+
+  $(".meats").click(function () {
+    $(".currentMeats").append('<li>' + this.name + '</li>')
+  });
+
+  $(".seasoning").click(function () {
+    $(".currentSeasoning").append('<li>' + this.name + '</li>')
+  });
+
+  $("#newPizza").submit(function (event) {
+    var sauce = $("input:checked.sauce").append($("input:checked.sauce").name)
+    var cheese = $("input:checked.cheese").append($("input:checked.cheese").name)
+    var veggies = $("input:checked.veggies").append($("input:checked.veggies").name)
+    var meats = $("input:checked.meats").append($("input:checked.meats").name)
+    var seasonings = $("input:checked.seasonings").append($("input:checked.seasonings").name)
+
+    console.log(sauce);
+    $(".sauceTotal").text()
+    event.preventDefault();
+  });
+
+
+
 
   $("#noSauce").click(function() {
     $(".sauce-info").empty();
@@ -93,22 +116,22 @@ $(document).ready(function () {
   });
 
   $("#noCheese").click(function() {
-    $(".sauce-info").empty();
+    $(".cheese-info").empty();
     $("input:checkbox.cheese").attr('checked', false);
   });
 
   $("#noVeggies").click(function() {
-    $(".sauce-info").empty();
+    $(".veggies-info").empty();
     $("input:checkbox.veggies").attr('checked', false);
   });
 
   $("#noMeats").click(function() {
-    $(".sauce-info").empty();
+    $(".meats-info").empty();
     $("input:checkbox.meats").attr('checked', false);
   });
 
   $("#noSeasoning").click(function() {
-    $(".sauce-info").empty();
+    $(".seasoning-info").empty();
     $("input:checkbox.seasoning").attr('checked', false);
   });
 });

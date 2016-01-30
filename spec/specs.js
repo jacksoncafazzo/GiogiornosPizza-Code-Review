@@ -5,14 +5,14 @@ describe("FlipPizza", function() {
     var veggies = new Veggies("", ["Gnome Onions"], "");
     var meat = new Meat("", ["Anchovies"], "");
     var seasoning = new Seasoning("", ["Magic"], "");
-    var size = new SizeTotal(["Princess"], "");
+    var size = new SizeTotal("Princess", "");
     var pizza = new FlipPizza(sauce, cheese, meat, veggies, seasoning, size);
     expect(pizza.sauce.plus).to.eql(["Spicy"]);
     expect(pizza.cheese.plus).to.eql(["Chevre"]);
     expect(pizza.veggies.plus).to.eql(["Gnome Onions"]);
     expect(pizza.meat.plus).to.eql(["Anchovies"]);
     expect(pizza.seasoning.plus).to.eql(["Magic"]);
-    expect(pizza.sizeTotal.pizzaSize).to.eql(["Princess"]);
+    expect(pizza.sizeTotal.pizzaSize).to.eql("Princess");
   });
 });
 
@@ -79,18 +79,18 @@ describe("FlipPizza.getPizzaPrice", function () {
     var cheese = new Cheese("", ["Chevre"], "");
     var veggies = new Veggies("", ["Gnome Onions"], "");
     var meat = new Meat("", ["Anchovies"], "");
-    var size = new SizeTotal(["Mario"], "");
+    var size = new SizeTotal("Mario", "");
     var pizza = new FlipPizza(sauce, cheese, veggies, meat, seasoning, size);
     expect(pizza.getPizzaPrice()).to.equal(25.5);
   })
 });
 
-describe("getChecks", function () {
+describe("getCheckNames", function () {
   it("returns object of check box sections to get names", function () {
     var sauce = [];
     $(".sauce input:checked").each(function () {
       sauce.push($(this).attr('name'));
     });
-    expect(getChecks(sauce)).to.eql["Marinara"];
+    expect(getCheckNames(sauce)).to.eql["Marinara"];
   });
 });

@@ -70,7 +70,13 @@ FlipPizza.prototype.getPizzaPrice = function () {
   return pizzaReturn
 }
 
-
+function getChecks (topping) {
+  var toppings = []
+  for (var i = 0; i < topping.length; i++) {
+    toppings.push(topping.attr("name"));
+  }
+  return toppings
+}
 
 $(document).ready(function () {
   $(".sauce").click(function () {
@@ -133,12 +139,11 @@ $(document).ready(function () {
 
 
 
-    var sauce = []
-    var sauceBox = $("input:checked.sauce").append($("input:checked.sauce").name)
-    for (var i = 0; i < sauceBox.length; i++) {
-      sauce.push(sauceBox.attr("name"));
-    }
-
+    var sauce = getChecks($("input:checked.sauce").append($("input:checked.sauce").name));
+    // for (var i = 0; i < sauceBox.length; i++) {
+    //   sauce.push(sauceBox.attr("name"));
+    // }
+console.log(sauce);
     var cheeseBox = $("input:checked.cheese").append($("input:checked.cheese").name)
     var veggiesBox = $("input:checked.veggies").append($("input:checked.veggies").name)
     var meatsBox = $("input:checked.meats").append($("input:checked.meats").name)

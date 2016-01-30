@@ -142,39 +142,39 @@ $(document).ready(function () {
     var plusMeats = [];
     var plusSeasoning = [];
 
-    $(".sauce input:checkbox").each(function () {
+    $("input:checked.sauce").each(function () {
       sauce.push($(this).attr("name"));
     });
-    $("#plusSauce input:checkbox").each(function () {
+    $("#plusSauce input:checked").each(function () {
       plusSauce.push($(this).attr("name"));
     });
     sauce = new Sauce(sauce, plusSauce);
-    $(".cheese input:checkbox").each(function () {
+    $("input:checked.cheese").each(function () {
       cheese.push($(this).attr("name"));
     });
-    $("#plusCheese input:checkbox").each(function () {
+    $("#plusCheese input:checked").each(function () {
       plusCheese.push($(this).attr("name"));
     });
     cheese = new Cheese(cheese, plusCheese);
     debugger;
-    $(".veggies input:checkbox").each(function () {
+    $("input:checked.veggies").each(function () {
       veggies.push($(this).attr("name"));
     });
-    $("#plusVeggies input:checkbox").each(function () {
+    $("#plusVeggies input:checked").each(function () {
       plusVeggies.push($(this).attr("name"));
     });
     veggies = new Veggies(veggies, plusVeggies);
-    $(".meats input:checkbox").each(function () {
+    $("input:checked.meats").each(function () {
       meats.push($(this).attr("name"));
     });
-    $("#plusMeats input:checkbox").each(function () {
+    $("#plusMeats input:checked").each(function () {
       plusMeats.push($(this).attr("name"));
     });
     meats = new Meat(meats, plusMeats);
-    $(".seasoning input:checkbox").each(function () {
+    $("input:checked.seasoning").each(function () {
       seasoning.push($(this).attr("name"));
     });
-    $("#warp input:checkbox").each(function () {
+    $("#plusSeasoning input:checked").each(function () {
       plusSeasoning.push($(this).attr("name"));
     });
     seasonings = new Seasoning(seasoning, plusSeasoning);

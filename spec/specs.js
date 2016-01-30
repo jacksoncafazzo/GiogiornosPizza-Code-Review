@@ -62,15 +62,25 @@ describe("Seasoning", function() {
 });
 
 describe("getPizzaPrice", function () {
-  it("returns additional cost of pizza items", function () {
+  // it("return additional cost of pizza items", function () {
+  //   var sauce = new Sauce("", ["Spicy"], "");
+  //   var cheese = new Cheese("", ["Chevre"], "");
+  //   var veggies = new Veggies("", ["Gnome Onions"], "");
+  //   var meat = new Meat("", ["Anchovies"], "");
+  //   var seasoning = new Seasoning("", ["Magic"], "");
+  //   var size = new Size("", ["Princess"], "");
+  //   var pizza = new FlipPizza(sauce, cheese, veggies, meat, seasoning, size);
+  //   expect(getPizzaPrice(pizza)).to.equal(10.5);
+  // });
+
+  it("will add special items and come up with a total for each section by size", function() {
+    var seasoning = new Seasoning("", ["Magic","Sparkles","Red Pepper"], "");
     var sauce = new Sauce("", ["Spicy"], "");
     var cheese = new Cheese("", ["Chevre"], "");
     var veggies = new Veggies("", ["Gnome Onions"], "");
     var meat = new Meat("", ["Anchovies"], "");
-    var seasoning = new Seasoning("", ["Magic"], "");
-    var size = new Size("", ["Princess"], "");
-
+    var size = new Size("", "", "", ["Mario"], "");
     var pizza = new FlipPizza(sauce, cheese, veggies, meat, seasoning, size);
-    expect(getPizzaPrice(pizza)).to.equal(5.5);
-  });
+    expect(getPizzaPrice(pizza)).to.equal(23.5);
+  })
 });

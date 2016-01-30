@@ -63,23 +63,34 @@ FlipPizza.prototype.getPizzaPrice = function () {
   } else {
     alert("You forgot to choose a size");
   }
-  // this.pizzaSize = {
-  //   personal: "",
-  //   small: "",
-  //   medium: "",
-  //   plus: "",
-  //   xtraplus: ""
-  // };
+  this.pizzaSize = {
+    personal: "",
+    small: "",
+    medium: "",
+    plus: "",
+    xtraplus: ""
+  };
   return pizzaReturn
 }
-
-
 
 
 $(document).ready(function () {
   $("#newPizza").submit(function () {
 
   });
+
+  $("#noSauce").click(function() {
+    $("input:checkbox.sauce").attr('checked', false);
+  });
+
+  $("#noCheese").click(function() {
+    $("input:checkbox.cheese").attr('checked', false);
+  });
+
+  $("#noVeggies").click(function() {
+    $("input:checkbox.veggies").attr('checked', false);
+  });
+
 
   $("#noMeats").click(function() {
     $("input:checkbox.meats").attr('checked', false);

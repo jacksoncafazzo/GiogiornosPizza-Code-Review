@@ -26,54 +26,61 @@
       <div class="row">
         <div class="col-md-6 topping-select">
           <form id="newPizza">
-            <div class="row">
+            <div class="row sauce-row">
               <div class="col col-md-3 type-of-item">
                 <h4>Sauces: </h4>
               </div>
               <div class="col col-md-9 type-of-item">
-                <div class="row sauce">
+                <div class="row">
                   <div class="col-md-5 incl">
-                    <input type="checkbox" name="sauce"> Marinara<br>
-                    <input type="checkbox" name="sauce"> Pesto<br>
-                    <input type="checkbox" name="sauce"> BBQ<br>
+                    <p>Included:</p>
+                    <input class="sauce" type="checkbox" name="sauce"> Marinara<br>
+                    <input class="sauce" type="checkbox" name="sauce"> Pesto<br>
+                    <input class="sauce" type="checkbox" name="sauce"> BBQ<br>
                   </div>
                   <div class="col col-md-5 plus">
-                    <input type="checkbox" name="sauce"> Special Spicy<br>
-                    <input type="checkbox" name="sauce"> Secret Louisiana<br>
+                    <p>Add for $0.50</p>
+                    <input class="sauce" type="checkbox" name="sauce"> Special Spicy<br>
+                    <input class="sauce" type="checkbox" name="sauce"> Secret Louisiana<br>
                   </div>
                   <div class="col col-md-2 free">
-                    <input class="free" type="checkbox" name="sauce"> None<br>
+                    <p> </p>
+                    <input id="noSauce" type="checkbox" name="sauce"> No sauce<br>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row cheese">
+            <div class="row cheese-row">
               <div class="col col-md-3 type-of-item">
                 <h4>Cheeses: </h4>
               </div>
               <div class="col col-md-9 type-of-item">
                 <div class="row">
                   <div class="col col-md-5 incl">
-                    <input type="checkbox" name="cheese"> Mozerella<br>
-                    <input type="checkbox" name="cheese"> Ricotta<br>
-                    <input type="checkbox" name="cheese"> Chedder<br>
+                    <p>Included:</p>
+                    <input class="cheese" type="checkbox" name="cheese"> Mozerella<br>
+                    <input class="cheese" type="checkbox" name="cheese"> Ricotta<br>
+                    <input class="cheese" type="checkbox" name="cheese"> Chedder<br>
                   </div>
                   <div class="col col-md-5 plus">
-                    <input type="checkbox" name="cheese"> Chevre<br>
-                    <input type="checkbox" name="cheese"> Zeus's Sheep<br>                  </div>
+                    <p>Add for $1:</p>
+                    <input class="cheese" type="checkbox" name="cheese"> Chevre<br>
+                    <input class="cheese" type="checkbox" name="cheese"> Zeus's Sheep<br>                  </div>
                   <div class="col col-md-2 free">
-                    <input type="checkbox" name="cheese"> None<br>
+                    <p> </p>
+                    <input id="noCheese" type="checkbox" name="cheese"> No cheese<br>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row veggies">
+            <div class="row veggies-row">
               <div class="col col-md-3 type-of-item">
                 <h4>Veggies: </h4>
               </div>
               <div class="col col-md-9 type-of-item">
                 <div class="row veggies">
                   <div class="col col-md-5 incl">
+                    <p>Included:</p>
                     <input class="veggies" type="checkbox" name="veggies"> Black Olives<br>
                     <input class="veggies" type="checkbox" name="veggies"> Green Peppers<br>
                     <input class="veggies" type="checkbox" name="veggies"> Peppercinis<br>
@@ -85,23 +92,26 @@
                     <input class="veggies" type="checkbox" name="veggies"> Green Onions<br>
                   </div>
                   <div class="col col-md-5 plus">
+                    <p>Add for $.50:</p>
                     <input class="veggies" type="checkbox" name="veggies"> Artichoke Hearts<br>
                     <input class="veggies" type="checkbox" name="veggies"> Shitake Mushrooms<br>
                     <input class="veggies" type="checkbox" name="veggies"> Acai<br>
                   </div>
                   <div class="col col-md-2 free">
-                    <input class="veggies" type="checkbox" name="veggies"> None<br>
+                    <p> </p>
+                    <input id="noVeggies" type="checkbox" name="veggies"> No veggies<br>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row meats">
+            <div class="row meats-row">
               <div class="col col-md-3 type-of-item">
                 <h4>Meats: </h4>
               </div>
               <div class="col col-md-9 type-of-item">
                 <div class="row">
                   <div class="col col-md-5 incl">
+                    <p>Included:</p>
                     <input class="meats" type="checkbox" name="meats"> Pepperoni<br>
                     <input class="meats" type="checkbox" name="meats"> Italian Sausage<br>
                     <input class="meats" type="checkbox" name="meats"> BBQ Chicken<br>
@@ -112,18 +122,20 @@
                     <input class="meats" type="checkbox" name="meats"> Bay Shrimp<br>
                   </div>
                   <div class="col col-md-5 plus">
+                    <p>Add for $1.50:</p>
                     <input class="meats" type="checkbox" name="meats"> Proscuitto<br>
                     <input class="meats" type="checkbox" name="meats"> Elk<br>
                     <input class="meats" type="checkbox" name="meats"> Koala<br>
                     <input class="meats" type="checkbox" name="meats"> Scallops<br>
                   </div>
                   <div class="col col-md-2 free">
-                    <input id="noMeats" type="checkbox" name="meats"> None<br>
+                    <p> </p>
+                    <input id="noMeats" type="checkbox" name="meats"> No meats<br>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row seasoning" >
+            <div class="row seasoning-row" >
               <div class="col col-md-3 type-of-item" >
                 <h4>Seasoning: </h4>
               </div>

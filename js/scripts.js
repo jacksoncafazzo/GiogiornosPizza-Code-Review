@@ -45,35 +45,34 @@ function Size (personal, small, regular, plus, xtraplus) {
   this.xtraplus = xtraplus;
 }
 
-function getPizzaPrice (pizza, size) {
-  var toppingPrices = (Object.keys(pizza.sauce.plus).length * 0.5) + Object.keys(pizza.cheese.plus).length + (Object.keys(pizza.meat.plus).length * 1.5) + (Object.keys(pizza.veggies.plus).length * 0.5) + (Object.keys(pizza.seasoning.plus).length * 2);
+FlipPizza.prototype.getPizzaPrice = function () {
+  var toppingPrices = (Object.keys(this.sauce.plus).length * 0.5) + Object.keys(this.cheese.plus).length + (Object.keys(this.meat.plus).length * 1.5) + (Object.keys(this.veggies.plus).length * 0.5) + (Object.keys(this.seasoning.plus).length * 2);
   var pizzaReturn = 0;
-  debugger;
 
-  if (pizza.pizzaSize.hasOwnProperty("personal") === "Toad") {
+  if (this.pizzaSize.personal === "Toad") {
     pizzaReturn = toppingPrices + 5;
-  } else if (pizza.pizzaSize.hasOwnProperty("small") === "Princess") {
+  } else if (this.pizzaSize.small === "Princess") {
     pizzaReturn = toppingPrices + 7;
-  } else if (pizza.pizzaSize.hasOwnProperty("medium") === "Yoshi") {
+  } else if (this.pizzaSize.medium === "Yoshi") {
     pizzaReturn = toppingPrices + 12;
-  } else if (pizza.pizzaSize.hasOwnProperty("plus") === "Mario") {
+  } else if (this.pizzaSize.plus === "Mario") {
     pizzaReturn = toppingPrices + 16;
     console.log(pizzaReturn);
-  } else if (pizza.pizzaSize.hasOwnProperty("xtraplus") === "Bowser") {
+  } else if (this.pizzaSize.xtraplus === "Bowser") {
     pizzaReturn = toppingPrices + 22;
   } else {
     alert("You forgot to choose a size");
   }
-  pizza = {
-    personal: "",
-    small: "",
-    medium: "",
-    plus: "",
-    xtraplus: ""
-  };
+  // this.pizzaSize = {
+  //   personal: "",
+  //   small: "",
+  //   medium: "",
+  //   plus: "",
+  //   xtraplus: ""
+  // };
   return pizzaReturn
 }
-//
+
 
 
 

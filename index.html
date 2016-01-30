@@ -12,19 +12,19 @@
   </head>
   <body>
     <div class="container-fluid">
-      <form id="newPizza">
-        <div class="row row-header">
-          <h1>Giogiornos Pizza Joint</h1>
+      <div class="row row-header">
+        <h1>Giogiornos Pizza Joint</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6 create-pizza">
+          <h2>Choose your personalized pizza options here</h2>
         </div>
-        <div class="row">
-          <div class="col-md-6 create-pizza">
-            <h2>Choose your personalized pizza options here</h2>
-          </div>
-          <div class="col-md-6 confirm-order">
-          </div>
+        <div class="col-md-6 confirm-order">
         </div>
-        <div class="row">
-          <div class="col-md-7 topping-select">
+      </div>
+      <div class="row">
+        <form id="newPizza">
+          <div class="col-md-6 topping-select">
             <div class="row sauce-row">
               <div class="col col-md-3 type-of-item">
                 <h4>Sauces: </h4>
@@ -33,7 +33,7 @@
                 <div class="row">
                   <div class="col-md-5 incl">
                     <p>Included:</p>
-                    <input class="sauce" type="checkbox" name="Marinara"> Marinara<br>
+                    <input class="sauce" type="checkbox" name="Marinara" checked="true"> Marinara<br>
                     <input class="sauce" type="checkbox" name="Pesto"> Pesto<br>
                     <input class="sauce" type="checkbox" name="BBQ"> BBQ<br>
                   </div>
@@ -57,7 +57,7 @@
                 <div class="row">
                   <div class="col col-md-5 incl">
                     <p>Included:</p>
-                    <input class="cheese" type="checkbox" name="Mozerella"> Mozerella<br>
+                    <input class="cheese" type="checkbox" name="Mozerella" checked="true"> Mozerella<br>
                     <input class="cheese" type="checkbox" name="Ricotta"> Ricotta<br>
                     <input class="cheese" type="checkbox" name="Chedder"> Chedder<br>
                   </div>
@@ -80,10 +80,10 @@
                 <div class="row veggies-row">
                   <div class="col col-md-5 incl">
                     <p>Included:</p>
-                    <input class="veggies" type="checkbox" name="Black Olives"> Black Olives<br>
+                    <input class="veggies" type="checkbox" name="Black Olives" checked="true"> Black Olives<br>
                     <input class="veggies" type="checkbox" name="Green Peppers"> Green Peppers<br>
                     <input class="veggies" type="checkbox" name="Peppercinis"> Peppercinis<br>
-                    <input class="veggies" type="checkbox" name="Red Onions"> Red Onions<br>
+                    <input class="veggies" type="checkbox" name="Red Onions" checked="true"> Red Onions<br>
                     <input class="veggies" type="checkbox" name="Tomatoes"> Tomatoes<br>
                     <input class="veggies" type="checkbox" name="Pineapple"> Pineapple<br>
                     <input class="veggies" type="checkbox" name="Kale"> Kale<br>
@@ -118,7 +118,7 @@
                     <input class="meats" type="checkbox" name="Italian Sausage"> Italian Sausage<br>
                     <input class="meats" type="checkbox" name="BBQ Chicken"> BBQ Chicken<br>
                     <input class="meats" type="checkbox" name="Taco"> Taco<br>
-                    <input class="meats" type="checkbox" name="Smoked Ham"> Smoked Ham<br>
+                    <input class="meats" type="checkbox" name="Smoked Ham" checked="true"> Smoked Ham<br>
                     <input class="meats" type="checkbox" name="Mortadella"> Mortadella<br>
                     <input class="meats" type="checkbox" name="Anchovies"> Anchovies<br>
                     <input class="meats" type="checkbox" name="Bay Shrimp"> Bay Shrimp<br>
@@ -142,30 +142,28 @@
                 <h4>Seasoning: </h4>
               </div>
               <div class="col col-md-9 type-of-item">
-                <form class="seasoning">
-                  <div class="row">
-                    <div class="col col-md-5 incl">
-                      <input class="seasoning" type="checkbox"  name="Parmesean Cheese"> Parmesean Cheese<br>
-                      <input class="seasoning" type="checkbox" name="Basil"> Basil<br>
-                      <input class="seasoning" type="checkbox" name="Oregano"> Oregano<br>
-                      <input class="seasoning" type="checkbox" name="Taco"> Taco<br>
-                      <input class="seasoning" type="checkbox" name="Red Pepper Flakes"> Red Pepper Flakes<br>
-                    </div>
-                    <div class="col col-md-5 plus">
-                      <input class="seasoning" type="checkbox" name="Jacobson Sea Salt"> Jacobson Sea Salt<br>
-                      <input class="seasoning" type="checkbox" name="Turkish Sumac blend"> Turkish Sumac blend<br>
-                      <input class="seasoning" type="checkbox" name="Koala Extract"> Koala Extract<br>
-                      <input class="seasoning" type="checkbox" name="Ranch"> Ranch<br>
-                    </div>
-                    <div class="col col-md-2 free" >
-                      <input type="checkbox" name="seasoning" id="noSeasoning"> None<br>
-                    </div>
+                <div class="row seasoning">
+                  <div class="col col-md-5 incl">
+                    <input class="seasoning" type="checkbox" name="Parmesean Cheese" checked="true"> Parmesean Cheese<br>
+                    <input class="seasoning" type="checkbox" name="Basil"> Basil<br>
+                    <input class="seasoning" type="checkbox" name="Oregano"> Oregano<br>
+                    <input class="seasoning" type="checkbox" name="Taco"> Taco<br>
+                    <input class="seasoning" type="checkbox" name="Red Pepper Flakes"> Red Pepper Flakes<br>
                   </div>
-                </form>
+                  <div class="col col-md-5 plus">
+                    <input class="seasoning" type="checkbox" name="Jacobson Sea Salt"> Jacobson Sea Salt<br>
+                    <input class="seasoning" type="checkbox" name="Turkish Sumac blend"> Turkish Sumac blend<br>
+                    <input class="seasoning" type="checkbox" name="Koala Extract"> Koala Extract<br>
+                    <input class="seasoning" type="checkbox" name="Ranch"> Ranch<br>
+                  </div>
+                  <div class="col col-md-2 free" >
+                    <input type="checkbox" name="seasoning" id="noSeasoning"> None<br>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div class="row">
               <div class="col-md-12 pizza-info">
                 <h1>Your Current Pizza</h1>
@@ -221,14 +219,20 @@
                 </ul>
               </div>
             </div>
-            <div class="row">
+            <div class="row totalsRow">
               <p class="sauceTotal">Sauce extras: $<span class="sauceTotal"></span></p>
               <p class="cheeseTotal">Cheese extras: $<span class="cheeseTotal"></span></p>
               <p class="veggiesTotal">Veggies extras: $<span class="veggiesTotal"></span></p>
               <p class="meatsTotal">Meats extras: $<span class="meatsTotal"></span></p>
               <p class="seasoningTotal">Seasonings extras: $<span class="seasoningTotal"></span></p>
-              
-
+              <p class="chooseSize">Choose Size:</p>
+              <div class="choosingSize">
+                <label class="radio"><input type="radio" name="choosingSize" val="Toad">Toad</label>
+                <label class="radio"><input type="radio" name="choosingSize" val="Princess">Princess</label>
+                <label class="radio"><input type="radio" name="choosingSize" val="Yoshi">Yoshi</label>
+                <label class="radio"><input type="radio" name="choosingSize" val="Mario">Mario</label>
+                <label class="radio"><input type="radio" name="choosingSize" val="Bowser">Bowser</label>
+              </div>
               <br>
               <p class="totalAmount">Total Amount: $<span class="total"></span></p>
               <button class="btn btn-lg" type="submit">Confirm Order</button>

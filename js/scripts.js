@@ -1,10 +1,10 @@
-function FlipPizza (sauce, cheese, meat, veggies, seasoning, pizzaSize) {
+function FlipPizza (sauce, cheese, meat, veggies, seasoning, sizeTotal) {
   this.sauce = sauce;
   this.cheese = cheese;
   this.veggies = veggies;
   this.meat = meat;
   this.seasoning = seasoning;
-  this.pizzaSize = pizzaSize;
+  this.sizeTotal = sizeTotal;
 }
 
 function Sauce (regular, plus, less) {
@@ -37,28 +37,25 @@ function Seasoning (regular, plus, less) {
   this.less = less;
 }
 
-function Size (personal, small, regular, plus, xtraplus) {
-  this.personal = personal;
-  this.small = small;
-  this.regular = regular;
-  this.plus = plus;
-  this.xtraplus = xtraplus;
+function SizeTotal (pizzaSize, orderedPizzas) {
+  this.pizzaSize = pizzaSize;
+  this.orderedPizzas = orderedPizzas;
 }
 
 FlipPizza.prototype.getPizzaPrice = function () {
   var toppingPrices = (Object.keys(this.sauce.plus).length * 0.5) + Object.keys(this.cheese.plus).length + (Object.keys(this.meat.plus).length * 1.5) + (Object.keys(this.veggies.plus).length * 0.5) + (Object.keys(this.seasoning.plus).length * 2);
   var pizzaReturn = 0;
 
-  if (this.pizzaSize.personal === "Toad") {
+  if (this.sizeTotal.pizzaSize === "Toad") {
     pizzaReturn = toppingPrices + 5;
-  } else if (this.pizzaSize.small === "Princess") {
+  } else if (this.sizeTotal.pizzaSize === "Princess") {
     pizzaReturn = toppingPrices + 7;
-  } else if (this.pizzaSize.medium === "Yoshi") {
+  } else if (this.sizeTotal.pizzaSize === "Yoshi") {
     pizzaReturn = toppingPrices + 12;
-  } else if (this.pizzaSize.plus === "Mario") {
+  } else if (this.sizeTotal.pizzaSize === "Mario") {
     pizzaReturn = toppingPrices + 16;
     console.log(pizzaReturn);
-  } else if (this.pizzaSize.xtraplus === "Bowser") {
+  } else if (this.sizeTotal.pizzaSize === "Bowser") {
     pizzaReturn = toppingPrices + 22;
   } else {
     alert("You forgot to choose a size");
@@ -72,6 +69,7 @@ FlipPizza.prototype.getPizzaPrice = function () {
   };
   return pizzaReturn
 }
+
 
 
 $(document).ready(function () {
@@ -95,15 +93,62 @@ $(document).ready(function () {
     $(".currentSeasoning").append('<li>' + this.name + '</li>')
   });
 
+  $(".choosingSize").click(function () {
+    var sauce = []
+    var cheese = []
+    var veggies = []
+    var meats = []
+    var seasonings = []
+    var pizzaSize = []
+
+    pizzaSize.push($(".choosingSize input:checked").attr("name"));
+
+    $(".sauce input:checked").each(function () {
+      sauce.push($(this).attr('name'));
+    });
+
+    $(".cheese input:checked").each(function () {
+      cheese.push($(this).attr('name'));
+    });
+
+    $(".veggies input:checked").each(function () {
+      veggies.push($(this).attr('name'));
+    });
+
+    $(".meats input:checked").each(function () {
+      meats.push($(this).attr('name'));
+    });
+
+    $(".seasonings input:checked").each(function () {
+      seasonings.push($(this).attr('val'));
+    });
+
+    console.log();
+    var pizza = new FlipPizza(sauce, cheese, veggies, meats, seasonings, pizzaSize);
+    console.log(pizza);
+    $("totalAmount").text(pizza.getPizzaPrice());
+  });
+
   $("#newPizza").submit(function (event) {
-    var sauce = $("input:checked.sauce").append($("input:checked.sauce").name)
-    var cheese = $("input:checked.cheese").append($("input:checked.cheese").name)
-    var veggies = $("input:checked.veggies").append($("input:checked.veggies").name)
-    var meats = $("input:checked.meats").append($("input:checked.meats").name)
-    var seasonings = $("input:checked.seasonings").append($("input:checked.seasonings").name)
+
+
+
+    var sauce = []
+    var sauceBox = $("input:checked.sauce").append($("input:checked.sauce").name)
+    for (var i = 0; i < sauceBox.length; i++) {
+      sauce.push(sauceBox.attr("name"));
+    }
+
+    var cheeseBox = $("input:checked.cheese").append($("input:checked.cheese").name)
+    var veggiesBox = $("input:checked.veggies").append($("input:checked.veggies").name)
+    var meatsBox = $("input:checked.meats").append($("input:checked.meats").name)
+    var seasoningsBox = $("input:checked.seasonings").append($("input:checked.seasonings").name)
+
+
+
 
     console.log(sauce);
-    $(".sauceTotal").text()
+    $(".sauceTotal").text();
     event.preventDefault();
   });
 
@@ -111,6 +156,7 @@ $(document).ready(function () {
 
 
   $("#noSauce").click(function() {
+    // if ($("input:checkbox.sauce").empty())
     $(".sauce-info").empty();
     $("input:checkbox.sauce").attr('checked', false);
   });

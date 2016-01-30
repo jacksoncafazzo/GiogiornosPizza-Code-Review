@@ -81,17 +81,30 @@ FlipPizza.prototype.getPizzaPrice = function () {
   return pizzaReturn
 }
 
-function getCheckNames (topping) {
-  var toppings = [];
-  $("input:checked" + topping).each(function () {
-    toppings.push(this).attr("name");
+function getChecks (topping) {
+  var regular = [];
+  var plus = []
+  var toppings = {};
+  debugger;
+  var tempRegular = "" + topping + " input:checked";
+  var capitol = topping.charAt(0);
+  capitol = capitol.toUpperCase();
+  var plusString = capitol.concat(topping.slice(1));
+  var tempPlus = "plus" + plusString + " input:checked";
+  $("." + tempRegular + "").each(function () {
+    regular.push($(this).attr("name"));
   });
-  return toppings
+  $("" + tempPlus + "").each(function () {
+    plus.push($(this).attr("name"));
+  });
+  return regular, plus;
 }
+
+
 
 $(document).ready(function () {
   $(".sauce").click(function () {
-    $(".currentSauce").append('<li>' + this.name + '</li>')
+  $(".currentSauce").append('<li>' + this.name + '</li>')
   });
 
   $(".cheese").click(function () {
@@ -111,51 +124,83 @@ $(document).ready(function () {
   });
 
   $(".choosingSize").click(function () {
-    var sauce = getCheckNames(".sauce");
-    var cheese = getCheckNames($("input:checked.cheese").append($("input:checked.cheese").name));
-    var veggies = getCheckNames($("input:checked.veggies").append($("input:checked.veggies").name));
-    var meats = getCheckNames($("input:checked.meats").append($("input:checked.meats").name));
-    var seasonings = getCheckNames($("input:checked.seasoning").append($("input:checked.seasoning").name));
-    var pizzaSize = []
+    var pizza = {};
+    var sauces = [];
+    var cheeses = [];
+    var veggies = [];
+    var meats = [];
+    var seasonings = [];
+    var sauce = [];
+    var cheese = [];
+    var veggies = [];
+    var meats = [];
+    var seasoning = [];
+    var pizzaSize = [];
+    var plusSauce = [];
+    var plusCheese = [];
+    var plusVeggies = [];
+    var plusMeats = [];
+    var plusSeasoning = [];
 
+    $(".sauce input:checkbox").each(function () {
+      sauce.push($(this).attr("name"));
+    });
+    $("#plusSauce input:checkbox").each(function () {
+      plusSauce.push($(this).attr("name"));
+    });
+    sauce = new Sauce(sauce, plusSauce);
+    $(".cheese input:checkbox").each(function () {
+      cheese.push($(this).attr("name"));
+    });
+    $("#plusCheese input:checkbox").each(function () {
+      plusCheese.push($(this).attr("name"));
+    });
+    cheese = new Cheese(cheese, plusCheese);
+    debugger;
+    $(".veggies input:checkbox").each(function () {
+      veggies.push($(this).attr("name"));
+    });
+    $("#plusVeggies input:checkbox").each(function () {
+      plusVeggies.push($(this).attr("name"));
+    });
+    veggies = new Veggies(veggies, plusVeggies);
+    $(".meats input:checkbox").each(function () {
+      meats.push($(this).attr("name"));
+    });
+    $("#plusMeats input:checkbox").each(function () {
+      plusMeats.push($(this).attr("name"));
+    });
+    meats = new Meat(meats, plusMeats);
+    $(".seasoning input:checkbox").each(function () {
+      seasoning.push($(this).attr("name"));
+    });
+    $("#warp input:checkbox").each(function () {
+      plusSeasoning.push($(this).attr("name"));
+    });
+    seasonings = new Seasoning(seasoning, plusSeasoning);
+
+    pizzaSize.push($(".choosingSize input:checked").attr("val"));
+    var pizza = new FlipPizza(sauces, cheeses, veggies, meats, seasonings, pizzaSize);
+    console.log(pizza);
+
+    $(".sauceTotal").text(Object.keys(pizza.sauce.plus.length * 0.5));
+
+  });
+
+  $("#newPizza").submit(function (event) {
+    var sauce = getCheckNames(".sauce");
+    var cheese = getCheckNames(".cheese");
+    var veggies = getCheckNames(".veggies");
+    var meats = getCheckNames(".meats");
+    var seasonings = getCheckNames(".seasoning");
+    var pizzaSize = []
     pizzaSize.push($(".choosingSize input:checked").attr("name"));
-    console.log(pizzaSize);
     var pizza = new FlipPizza(sauce, cheese, veggies, meats, seasonings, pizzaSize);
     console.log(pizza);
   });
 
-  $(".sauce input:checked").each(function () {
-    sauce.push($(this).attr('name'));
-  });
 
-  $(".cheese input:checked").each(function () {
-    cheese.push($(this).attr('name'));
-  });
-
-  $(".veggies input:checked").each(function () {
-    veggies.push($(this).attr('name'));
-  });
-
-  $(".meats input:checked").each(function () {
-    meats.push($(this).attr('name'));
-  });
-
-  $(".seasonings input:checked").each(function () {
-    seasonings.push($(this).attr('val'));
-  });
-
-  $("#newPizza").submit(function (event) {
-    var sauce = getCheckNames($("input:checked.sauce").append($("input:checked.sauce").name));
-    var cheese = getCheckNames($("input:checked.cheese").append($("input:checked.cheese").name));
-    var veggies = getCheckNames($("input:checked.veggies").append($("input:checked.sauce").name));
-    var meats = getCheckNames($("input:checked.meat").append($("input:checked.sauce").name));
-    var seasonings = getCheckNames($("input:checked.seasonings").append($("input:checked.sauce").name));
-
-    $(".sauceTotal").text();
-    event.preventDefault();
-  });
-
-
+  event.preventDefault();
 
 
   $("#noSauce").click(function() {

@@ -37,7 +37,7 @@
                     <input class="sauce" type="checkbox" name="Pesto"> Pesto<br>
                     <input class="sauce" type="checkbox" name="BBQ"> BBQ<br>
                   </div>
-                  <div class="col col-md-5 plus">
+                  <div class="col col-md-5" id="plusSauce">
                     <p>Add for $0.50</p>
                     <input class="sauce" type="checkbox" name="Special Spicy"> Special Spicy<br>
                     <input class="sauce" type="checkbox" name="Secret Louisiana"> Secret Louisiana<br>
@@ -61,7 +61,7 @@
                     <input class="cheese" type="checkbox" name="Ricotta"> Ricotta<br>
                     <input class="cheese" type="checkbox" name="Chedder"> Chedder<br>
                   </div>
-                  <div class="col col-md-5 plus">
+                  <div class="col col-md-5" id="plusCheese">
                     <p>Add for $1:</p>
                     <input class="cheese" type="checkbox" name="Chevre"> Chevre<br>
                     <input class="cheese" type="checkbox" name="Zeus's Sheep"> Zeus's Sheep<br>                  </div>
@@ -90,7 +90,7 @@
                     <input class="veggies" type="checkbox" name="Crimini Mushrooms"> Crimini Mushrooms<br>
                     <input class="veggies" type="checkbox" name="Green Onions"> Green Onions<br>
                   </div>
-                  <div class="col col-md-5 plus">
+                  <div class="col col-md-5" id="plusVeggies">
                     <p>Add for $.50:</p>
                     <input class="veggies" type="checkbox" name="Artichoke Hearts"> Artichoke Hearts<br>
                     <input class="veggies" type="checkbox" name="Shitake Mushrooms"> Shitake Mushrooms<br>
@@ -123,7 +123,7 @@
                     <input class="meats" type="checkbox" name="Anchovies"> Anchovies<br>
                     <input class="meats" type="checkbox" name="Bay Shrimp"> Bay Shrimp<br>
                   </div>
-                  <div class="col col-md-5 plus">
+                  <div class="col col-md-5" id="plusmeats">
                     <p>Add for $1.50:</p>
                     <input class="meats" type="checkbox" name="Proscuitto"> Proscuitto<br>
                     <input class="meats" type="checkbox" name="Elk"> Elk<br>
@@ -150,7 +150,7 @@
                     <input class="seasoning" type="checkbox" name="Taco"> Taco<br>
                     <input class="seasoning" type="checkbox" name="Red Pepper Flakes"> Red Pepper Flakes<br>
                   </div>
-                  <div class="col col-md-5 plus">
+                  <div class="col col-md-5" id="plusSeasoning">
                     <input class="seasoning" type="checkbox" name="Jacobson Sea Salt"> Jacobson Sea Salt<br>
                     <input class="seasoning" type="checkbox" name="Turkish Sumac blend"> Turkish Sumac blend<br>
                     <input class="seasoning" type="checkbox" name="Koala Extract"> Koala Extract<br>
@@ -231,12 +231,12 @@
               </div>
             </div>
             <div class="row totalsRow">
-              <p class="sauceTotal">Sauce extras: $<span class="sauceTotal"></span></p>
-              <p class="cheeseTotal">Cheese extras: $<span class="cheeseTotal"></span></p>
-              <p class="veggiesTotal">Veggies extras: $<span class="veggiesTotal"></span></p>
-              <p class="meatsTotal">Meats extras: $<span class="meatsTotal"></span></p>
-              <p class="seasoningTotal">Seasonings extras: $<span class="seasoningTotal"></span></p>
-              <p class="chooseSize">Choose Size:</p>
+              <p>Sauce extras: $<span class="sauceTotal"></span></p>
+              <p>Cheese extras: $<span class="cheeseTotal"></span></p>
+              <p>Veggies extras: $<span class="veggiesTotal"></span></p>
+              <p>Meats extras: $<span class="meatsTotal"></span></p>
+              <p>Seasonings extras: $<span class="seasoningTotal"></span></p>
+              <p>Choose Size:</p>
               <div class="choosingSize">
                 <label class="radio"><input type="radio" name="choosingSize" val="Toad">Toad</label>
                 <label class="radio"><input type="radio" name="choosingSize" val="Princess">Princess</label>

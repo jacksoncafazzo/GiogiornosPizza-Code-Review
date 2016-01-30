@@ -85,12 +85,12 @@ describe("FlipPizza.getPizzaPrice", function () {
   })
 });
 
-describe("getCheckNames", function () {
-  it("returns object of check box sections to get names", function () {
+describe("getChecks", function () {
+  it("gets names of check box sections", function () {
     var sauce = [];
     $(".sauce input:checked").each(function () {
       sauce.push($(this).attr('name'));
     });
-    expect(getCheckNames(sauce)).to.eql["Marinara"];
+    expect(getChecks(sauce)).to.eql["Marinara"];
   });
 });

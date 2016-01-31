@@ -9,7 +9,18 @@ html, body {
 }
 
 .row-header {
-  background: cyan;
+  background: black;
+  padding-top: 12px;
+}
+
+.row-header h1 {
+  float: top;
+  text-shadow: -3px -3px -2px yellow;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+
 }
 
 .type-of-item {
@@ -82,7 +93,11 @@ html, body {
   background: grey;
 }
 
-.choosingSize {
+.selection-display ul {
   float: right;
+}
+
+.choosingSize {
+  /*float: right;*/
   background-color: cyan;
 }

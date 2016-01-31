@@ -168,16 +168,16 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-5 pizza-info">
-                <p>Sauce Selection:</p>
-                <ul>
+            <div class="row selection-display">
+              <div class="col-md-4 pizza-info">
+                <p>Sauce:</p>
+                  <ul>
                 <span class="currentSauce">
-                <li>Marinara</li>
+                  <li>Marinara</li>
                 </span>
                 </ul>
                 <div class="cheese-info">
-                  <p>Cheese Selection:</p>
+                  <p>Cheese:</p>
                   <ul>
                     <span class="currentCheese">
                       <li>Mozerella</li>
@@ -185,7 +185,7 @@
                   </ul>
                 </div>
                 <div class="veggies-info">
-                  <p>Veggies Selection:</p>
+                  <p>Veggies:</p>
                   <ul>
                     <span class="currentVeggies">
                       <li>Black Olives</li>
@@ -194,7 +194,7 @@
                   </ul>
                 </div>
                 <div class="meats-info">
-                  <p>Meat Selection:</p>
+                  <p>Meat:</p>
                   <ul>
                     <span class="currentMeats">
                       <li>Smoked Ham</li>
@@ -202,7 +202,7 @@
                   </ul>
                 </div>
                 <div class="seasoning-info">
-                  <p>Seasoning Selection:</p>
+                  <p>Special Seasonings:</p>
                   <ul>
                     <span class="currentSeasoning">
                       <li>Parmesean Cheese</li>
@@ -210,7 +210,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-md-7 pizza-info">
+              <div class="col col-md-4 pizza-info">
                 <div class="choosingSize">
                   <p>Choose Pizza Size:</p>
                   <label class="radio"><input type="radio" name="choosingSize" val="Toad">Toad</label>
@@ -218,15 +218,17 @@
                   <label class="radio"><input type="radio" name="choosingSize" val="Yoshi">Yoshi</label>
                   <label class="radio"><input type="radio" name="choosingSize" val="Mario">Mario</label>
                   <label class="radio"><input type="radio" name="choosingSize" val="Bowser">Bowser</label>
-                  <p>Sauce extras: $<span class="sauceTotal"></span></p>
-                  <p>Cheese extras: $<span class="cheeseTotal"></span></p>
-                  <p>Veggies extras: $<span class="veggiesTotal"></span></p>
-                  <p>Meats extras: $<span class="meatsTotal"></span></p>
-                  <p>Seasonings extras: $<span class="seasoningTotal"></span></p>
-                  <br>
-                  <p class="totalAmount">Total Amount: $<span class="total"></span></p>
-                  <button class="btn btn-lg" type="submit">Confirm Order</button>
                 </div>
+                <button class="btn btn-lg" type="submit">Confirm Order</button>
+              </div>
+              <div class="col-md-4 ">
+                <p>Sauce extras: $<span class="sauceTotal"></span></p>
+                <p>Cheese extras: $<span class="cheeseTotal"></span></p>
+                <p>Veggies extras: $<span class="veggiesTotal"></span></p>
+                <p>Meats extras: $<span class="meatsTotal"></span></p>
+                <p>Seasonings extras: $<span class="seasoningTotal"></span></p>
+                <br>
+                <p class="totalAmount">Total Amount: $<span class="total"></span></p>
               </div>
             </div>
           </div>

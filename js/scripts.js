@@ -81,30 +81,102 @@ FlipPizza.prototype.getPizzaPrice = function () {
   return pizzaReturn
 }
 
-// function getChecks (topping) {
-//   var regular = [];
-//   var plus = []
-//   var toppings = {};
-//   debugger;
-//   var tempRegular = "" + topping + " input:checked";
-//   var capitol = topping.charAt(0);
-//   capitol = capitol.toUpperCase();
-//   var plusString = capitol.concat(topping.slice(1));
-//   var tempPlus = "plus" + plusString + " input:checked";
-//   $("." + tempRegular + "").each(function () {
-//     regular.push($(this).attr("name"));
+function getChecks (topping) {
+  $("input:checked").each(function () {
+    if (this.name === topping) {
+      return topping;
+    } else {
+      console.log("something went wrong");
+    }
+  });
+}
+
+
+// *******************
+  //   sauce.push($(this).attr('name'));
+  // });
+  // var regular = [];
+  // var plus = []
+  // var toppings = {};
+  // debugger;
+  // var tempRegular = "" + topping + " input:checked";
+  // var capitol = topping.charAt(0);
+  // capitol = capitol.toUpperCase();
+  // var plusString = capitol.concat(topping.slice(1));
+  // var tempPlus = "plus" + plusString + " input:checked";
+  // $("." + tempRegular + "").each(function () {
+  //   regular.push($(this).attr("name"));
+  // });
+  // $("" + tempPlus + "").each(function () {
+  //   plus.push($(this).attr("name"));
+  // });
+  // return regular, plus;
+//
+// function whereToPut formula (pizza, toppingType) {
+//   var regularList = pizza.getOwnPropertyNames(pizza.toppingType.regular)
+//   var plusList = pizza.getOwnPropertyNames(pizza.toppingType.plus)
+//
+// //  $(".sauce input:checkbox").each( function () {
+//     for (var i = 0; i < regularList.length; i++) {
+//       if (this.name === regularList[i]) {
+//
+//       }
+//         Object.defineProperties(pizza.toppingType.regular, regularList[i])
+//
+//     }
+//     for (var i = 0; i < plusList.length; i++) {
+//       if (this.name === plusList[i]) {
+//
+//       }
+//     }
+//       if (this.name === plusList[i]) {
+//         Object.defineProperties(pizza.toppingType.plus, plusList[i])
+//
+//       }
 //   });
-//   $("" + tempPlus + "").each(function () {
-//     plus.push($(this).attr("name"));
-//   });
-//   return regular, plus;
 // }
 
 
-
 $(document).ready(function () {
-  $(".sauce").click(function () {
-  $(".currentSauce").append('<li>' + this.name + '</li>')
+  var pizza = {};
+
+  $(".clear-pizza").click(function () {
+    $("ul").empty();
+    $("input:checkbox").attr("checked", false);
+    console.log(pizza);
+    pizza = {};
+    console.log(pizza);
+  });
+
+  $("input:checkbox.checked").click(function () {
+    if ($(this).hasClass("regular")) {
+      var toppingType = "regular";
+    } else if ($(this).hasClass("plus")) {
+      var toppingType = "plus";
+    } else {
+      console.log("whoa man");
+    }
+    if ($(this).hasClass("sauce")) {
+      $(".currentSauce").append('<li>' + this.name + '</li>')
+      pizza.sauce.toppingType.append(this.name);
+    } else if ($(this).hasClass("cheese")) {
+      pizza.cheese.toppingType.append(this.name);
+    } else if ($(this).hasClass("veggies")) {
+      pizza.veggies.toppingType.append(this.name);
+    } else if ($(this).hasClass("meats")) {
+      pizza.meats.toppingType.append(this.name);
+    } else if ($(this).hasClass("seasoning")) {
+      pizza.seasoning.toppingType.append(this.name);
+    } else {
+      console.log("panic in the disco");
+    }
+
+
+  });
+
+  $("input:checkbox.regular").click(function () {
+    pizza.toppingType.append(this.name);
+
   });
 
   $(".cheese").click(function () {
@@ -188,16 +260,30 @@ $(document).ready(function () {
   });
 
   $("#newPizza").submit(function (event) {
-    var sauce = getCheckNames(".sauce");
-    var cheese = getCheckNames(".cheese");
-    var veggies = getCheckNames(".veggies");
-    var meats = getCheckNames(".meats");
-    var seasonings = getCheckNames(".seasoning");
-    var pizzaSize = []
-    pizzaSize.push($(".choosingSize input:checked").attr("name"));
-    var pizza = new FlipPizza(sauce, cheese, veggies, meats, seasonings, pizzaSize);
-    console.log(pizza);
+    var checkedBoxes = {}
+    $("input:checkbox.checked").each( function () {
+
+    });
+    console.log(checkedBoxes);
   });
+
+    // *******************************
+    // $("." + tempRegular + "").each(function () {
+    //   regular.push($(this).attr("name"));
+    // });
+    // $("" + tempPlus + "").each(function () {
+    //   plus.push($(this).attr("name"));
+    // });
+    //
+    // var sauce = getCheckNames(".sauce");
+    // var cheese = getCheckNames(".cheese");
+    // var veggies = getCheckNames(".veggies");
+    // var meats = getCheckNames(".meats");
+    // var seasonings = getCheckNames(".seasoning");
+    // var pizzaSize = []
+    // pizzaSize.push($(".choosingSize input:checked").attr("name"));
+    // var pizza = new FlipPizza(sauce, cheese, veggies, meats, seasonings, pizzaSize);
+    // console.log(pizza);
 
 
   event.preventDefault();

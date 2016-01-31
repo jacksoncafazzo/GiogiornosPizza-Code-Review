@@ -119,6 +119,10 @@ html, body {
   padding-bottom: 18px;
 }
 
+#special-seasonings {
+  font-size: 1.6em;
+}
+
 .pizza-info p {
   background: green;
   font-size: 1.5em;
@@ -165,4 +169,12 @@ html, body {
 
 .totals-display {
   font-weight: bold;
+}
+
+.clear-pizza {
+  background: cyan;
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin-top: -58px;
 }

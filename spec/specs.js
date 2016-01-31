@@ -86,11 +86,8 @@ describe("FlipPizza.getPizzaPrice", function () {
 });
 
 describe("getChecks", function () {
-  it("gets names of check box sections", function () {
-    var sauce = [];
-    $(".sauce input:checked").each(function () {
-      sauce.push($(this).attr('name'));
-    });
-    expect(getChecks(sauce)).to.eql["Marinara"];
+  it("gets a name from the pizza and sees if the checkbox is checked", function () {
+    var seasoning = "Koala Extract";
+    expect(getChecks(seasoning)).to.equal(false);
   });
 });

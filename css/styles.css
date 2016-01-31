@@ -1,6 +1,8 @@
 html, body {
     height: 100%;
     width: 100%;
+    color: black;
+
 }
 
 .container-fluid {
@@ -11,15 +13,41 @@ html, body {
 .row-header {
   background: black;
   padding-top: 12px;
+  padding-bottom: 20px;
+
 }
 
-.row-header h1 {
+ h1 {
+  font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 26.4px;
   float: top;
-  text-shadow: -3px -3px -2px yellow;
+  text-shadow: 2px 2px 2px silver;
   color: white;
   font-weight: bold;
   font-size: 3em;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+
+.create-pizza {
+  background: red;
+  border-right: 3px solid black;
+  padding-bottom: 14px;
+  margin-top: 1px;
+}
+
+.create-pizza h2 {
+  font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  color: black;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bolder;
+  line-height: 20px;
+  font-size: 2.6em;
+  text-shadow: -1px -1px 1px white;
+  text-align: center;
 
 }
 
@@ -29,26 +57,28 @@ html, body {
 
 .type-of-item h4 {
   font-weight: bold;
-  font-size: 1.8em;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 2em;
+  font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 
 
-
-.create-pizza {
-  background: red;
-  min-height: 100%;
-}
 
 .confirm-order {
   background: red;
+
+}
+
+.confirm-order h1 {
+  color: black;
+  padding-bottom: 10px;
+  text-shadow: -1px -1px 1px white;
+
 }
 
 .topping-select  {
   border: 3px solid black;
   background: red;
-  width: 560px;
-  text-shadow: -1px -1px 1px black;
+  text-shadow: 1px 1px 1px black;
 }
 
 .topping-select p {
@@ -89,15 +119,50 @@ html, body {
   padding-bottom: 18px;
 }
 
-.pizza-info {
-  background: grey;
+.pizza-info p {
+  background: green;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.selection-display {
+  font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 
 .selection-display ul {
-  float: right;
+  font-size: 1.1em;
+}
+
+.purchase-col {
+  background-color: red;
+  padding-bottom: 16px;
+}
+
+.purchase-col p {
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  text-shadow: -1px -1px 1px silver;
+  text-align: center;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  font-size: 1.1em;
+}
+
+.radio  {
+  padding-left: 27px;
+  padding-bottom: 4px;
+  text-shadow: 1px 1px 2px black;
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .choosingSize {
-  /*float: right;*/
-  background-color: cyan;
+  background-color: white;
+
+}
+
+.totals-display {
+  font-weight: bold;
 }

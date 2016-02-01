@@ -64,12 +64,12 @@ html, body {
 
 
 .confirm-order {
-  background: red;
+  background: black;
 
 }
 
 .confirm-order h1 {
-  color: black;
+  color: green;
   padding-bottom: 10px;
   text-shadow: -1px -1px 1px white;
 
@@ -138,13 +138,14 @@ html, body {
 }
 
 .purchase-col {
-  background-color: red;
+  background-color: black;
   padding-bottom: 16px;
 }
 
 .purchase-col p {
   color: white;
-  background-color: black;
+  background-color: red;
+  border: 2px solid white;
   font-weight: bold;
   text-shadow: -1px -1px 1px silver;
   text-align: center;
@@ -172,9 +173,20 @@ html, body {
 }
 
 .clear-pizza {
-  background: cyan;
-  width: 50px;
+  background: red;
+  border: 3px solid white;
+  width: 130px;
   height: 50px;
   float: right;
   margin-top: -58px;
+}
+
+.clear-pizza p {
+  font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-top: 7px;
+  text-align: center;
 }

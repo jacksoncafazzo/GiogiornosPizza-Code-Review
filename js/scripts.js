@@ -1,54 +1,54 @@
-function FlipPizza (toppings, pizzaSize, totals) {
+function FlipPizza (pizzaBase, toppings, toppingPrices) {
+  this.pizzaBase = pizzaBase;
   this.toppings = toppings;
-  this.pizzaSize = pizzaSize;
-  this.totals = totals;
+  this.toppingPrices = toppingPrices;
 }
 
-function Topping (sauce, cheese, veggie, meat, seasoning) {
-  this.sauce = sauce;
-  this.cheese = cheese;
-  this.veggie = veggie;
-  this.meat = meat;
-  this.seasoning = seasoning;
-}
+// function Topping (sauce, cheese, veggie, meat, seasoning) {
+//   this.sauce = sauce;
+//   this.cheese = cheese;
+//   this.veggie = veggie;
+//   this.meat = meat;
+//   this.seasoning = seasoning;
+// }
 
 FlipPizza.prototype.getPizzaPrice = function () {
-  var sauceTotal = 0;
+  var pizzaPrice = 0;
   debugger;
-  for (var i = 0; i < Object.keys(this.toppings.sauce).length; i++) {
-    var sauceTotal =+ 1;
+  var toppingPrices = [1,1,1,1,1];
+  for (var i = 0; i < this.toppings.length; i++) {
+  pizzaPrice = pizzaPrice + this.toppingPrices[i];
   }
-  for (var i = 0; i < Object.keys(this).length; i++) {
-    sauceTotal =+ this.toppings.sauce[0].length;
-  }
-  var sauceTotal = this.toppings.sauce.length * 0.5;
-  var cheeseTotal = this.toppings.cheese.length;
-  var vegetableTotal = this.toppings.veggie.length * 0.5;
-  var meatTotal = this.toppings.meat.length * 1.5;
-  var seasoningTotal = this.toppings.seasoning.length * 2
-  $(".sauceTotal").text(sauceTotal);
-  $(".cheeseTotal").text(cheeseTotal);
-  $(".veggiesTotal").text(vegetableTotal);
-  $(".meatsTotal").text(meatTotal);
-  $(".seasoningTotal").text(seasoningTotal);
-  var toppingPrices = sauceTotal + cheeseTotal + vegetableTotal + meatTotal + seasoningTotal;
-  if (this.pizzaSize === "Toad") {
-    pizzaReturn = toppingPrices + 5;
-  } else if (this.pizzaSize === "Princess") {
-    pizzaReturn = toppingPrices + 7;
-  } else if (this.pizzaSize === "Yoshi") {
-    pizzaReturn = toppingPrices + 12;
-  } else if (this.pizzaSize === "Mario") {
-    pizzaReturn = toppingPrices + 16;
-  } else if (this.pizzaSize === "Bowser") {
-    pizzaReturn = toppingPrices + 22;
-  } else {
-    alert("You forgot to choose a size");
-  }
-  $(".totalAmount").empty();
-  $(".totalAmount").append(pizzaReturn);
 
-  return pizzaReturn
+
+  $(".sauceTotal").text(toppingPrices[0]);
+  $(".cheeseTotal").text(toppingPrices[1]);
+  $(".veggiesTotal").text(toppingPrices[2]);
+  $(".meatsTotal").text(toppingPrices[3]);
+  $(".seasoningTotal").text(toppingPrices[4]);
+  for (var i = 0; i < this.pizzaBase.length; i++) {
+    if (this.pizzaBase[0] === "Toad") {
+      pizzaPrice = pizzaPrice + 4;
+      break;
+    } else if (this.pizzaBase[1] === "Princess") {
+      pizzaPrice = pizzaPrice + 8;
+    } else if (this.pizzaBase[2] === "Yoshi") {
+      pizzaPrice = pizzaPrice + 12;
+    } else if (this.pizzaBase[3] === "Mario") {
+      pizzaPrice = pizzaPrice + 16;
+    } else if (this.pizzaBase[4] === "Bowser") {
+      pizzaPrice = pizzaPrice + 20;
+      break;
+    } else {
+      alert("You forgot to choose a size");
+    }
+  }
+
+
+  $(".total").empty();
+  $(".total").append(pizzaPrice);
+
+  return pizzaPrice;
 }
 
 
@@ -102,7 +102,6 @@ FlipPizza.prototype.getPizzaPrice = function () {
 $(document).ready(function () {
 
   $("#noSauce").click(function() {
-    // if ($("input:checkbox.sauce").empty())
     $(".sauce-info").empty();
     $("input:checkbox.sauce").attr('checked', false);
   });
@@ -136,16 +135,17 @@ $(document).ready(function () {
   });
 
   $("input:checkbox").click(function (event) {
-    $("ul").empty();
-    var sizes = $("input:radio");
+    // get the radio size value
+    var toppingChecks = $("input:radio");
     for (var i = 0; i < sizes.length; i++) {
-      if ($(sizes[i]).prop("checked") === true) {
-      var pizzaSize = $("input:radio:checked").val();
-      pizzaSize = $(sizes[i]).val();
+      if ($(toppingChecks[i]).prop("checked") === true) {
+        var pizzaSize = $("input:radio:checked").val();
       }
     }
-    var toppings = new Topping("","","","","");
-    var pizza = new FlipPizza(toppings, pizzaSize);
+
+    var toppings = ["Sauce","Cheese","Veggies","Meat","Seasonings"];
+    var toppingPrices = [1,1,1,1,1];
+    var pizza = new FlipPizza(pizzaBase, toppings, toppingPrices);
     var toppingSections = ["sauces","cheeses","veggies","meats","seasoning"];
     var custToppingSection = $(this).prop("class");
     var custTopping = $(this).prop("name");

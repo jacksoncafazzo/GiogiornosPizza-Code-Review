@@ -59,13 +59,12 @@ $(document).ready(function () {
   });
 
   $(".clear-pizza").click(function (event) {
-    $("ul").empty();
+    $(".currentPizza").empty();
     $(".total").empty();
     $("input:checkbox").attr("checked", false);
   });
 
   $(".update-order").click(function (event) {
-    $("ul").empty();
     var sizeRadio = $("input:radio");
     for (var i = 0; i < sizeRadio.length; i++) {
       if ($(sizeRadio[i]).prop("checked") === true) {

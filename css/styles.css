@@ -125,8 +125,12 @@ html, body {
 
 .pizza-info p {
   background: green;
-  font-size: 1.5em;
+  font-size: 1.8em;
   text-align: center;
+  padding-bottom: 6px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 3px black;
 }
 
 .selection-display {
@@ -134,7 +138,7 @@ html, body {
 }
 
 .selection-display ul {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .purchase-col {
@@ -151,7 +155,7 @@ html, body {
   text-align: center;
   padding-bottom: 3px;
   padding-top: 3px;
-  font-size: 1.1em;
+  font-size: 1.9em;
 }
 
 .radio  {
@@ -165,11 +169,19 @@ html, body {
 
 .choosingSize {
   background-color: white;
-
 }
 
+.choosingSize p{
+  text-shadow: 2px 2px 2px black;
+}
 .totals-display {
   font-weight: bold;
+  font-size: 4em;
+  text-shadow: 2px 2px 4px;
+}
+
+.total {
+
 }
 
 .clear-pizza {
@@ -189,23 +201,32 @@ html, body {
   font-size: 1.5em;
   padding-top: 7px;
   text-align: center;
+  text-shadow: 2px 2px 2px black;
 }
 
 .clear-pizza p:hover {
   color: black;
+  text-shadow: 3px 3px 3px black;
 }
 
 .update-order {
+  float: none;
   height: 45px;
-  width: 155px;
+  width: 100%;
   background: green;
   color: green;
   border: 3px solid white;
 }
 
 .update-order p {
+  cursor: pointer;
   border: 0px;
-  background-color: green;
+  background-color: transparent;
   font-size: 1.5em;
   text-shadow: 2px 2px 1px black;
+}
+
+.update-order p:hover {
+  color: yellow;
+  text-shadow: 3px 3px 3px black;
 }

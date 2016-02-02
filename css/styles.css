@@ -12,29 +12,27 @@ html, body {
 
 .row-header {
   background: black;
-  padding-top: 12px;
-  padding-bottom: 20px;
-
+  text-align: right;
+  padding-bottom: 12px;
 }
 
- h1 {
+.row-header h1 {
   font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  line-height: 26.4px;
+  /*line-height: 26.4px;*/
   float: top;
   text-shadow: 2px 2px 2px silver;
   color: white;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 6em;
 
 }
 
 .create-pizza {
   background: red;
   border-right: 3px solid black;
-  padding-bottom: 14px;
   margin-top: 1px;
 }
 

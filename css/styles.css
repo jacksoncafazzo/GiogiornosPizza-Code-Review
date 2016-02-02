@@ -183,10 +183,29 @@ html, body {
 
 .clear-pizza p {
   font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
-
+  cursor: pointer;
   color: white;
   font-weight: bold;
   font-size: 1.5em;
   padding-top: 7px;
   text-align: center;
+}
+
+.clear-pizza p:hover {
+  color: black;
+}
+
+.update-order {
+  height: 45px;
+  width: 155px;
+  background: green;
+  color: green;
+  border: 3px solid white;
+}
+
+.update-order p {
+  border: 0px;
+  background-color: green;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 1px black;
 }

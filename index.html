@@ -97,7 +97,7 @@
                     <input class="veggies" type="checkbox" name="Green Onions"> Green Onions<br>
                   </div>
                   <div class="col col-md-5">
-                    <p>Add for $.50:</p>
+                    <p>Add for $1:</p>
                     <input class="veggies" id="plus" type="checkbox" name="Artichoke Hearts"> Artichoke Hearts<br>
                     <input class="veggies" id="plus" type="checkbox" name="Shitake Mushrooms"> Shitake Mushrooms<br>
                     <input class="veggies" id="plus" type="checkbox" name="Acai"> Acai<br>
@@ -130,7 +130,7 @@
                     <input class="meats" type="checkbox" name="Bay Shrimp"> Bay Shrimp<br>
                   </div>
                   <div class="col col-md-5" id="plus">
-                    <p>Add for $1.50:</p>
+                    <p>Add for $1:</p>
                     <input class="meats" id="plus" type="checkbox" name="Proscuitto"> Proscuitto<br>
                     <input class="meats" id="plus" type="checkbox" name="Elk"> Elk<br>
                     <input class="meats" id="plus" type="checkbox" name="Koala"> Koala<br>
@@ -157,6 +157,7 @@
                     <input class="seasonings" type="checkbox" name="Red Pepper Flakes"> Red Pepper Flakes<br>
                   </div>
                   <div class="col col-md-5">
+                    <p>Add for $1</p>
                     <input class="seasonings" id="plus" type="checkbox" name="Jacobson Sea Salt"> Jacobson Sea Salt<br>
                     <input class="seasonings" id="plus" type="checkbox" name="Turkish Sumac blend"> Turkish Sumac blend<br>
                     <input class="seasonings" id="plus" type="checkbox" name="Koala Extract"> Koala Extract<br>
@@ -172,41 +173,11 @@
           <div class="col-md-6">
             <div class="row selection-display">
               <div class="col-md-4 pizza-info">
-                <p>Sauce</p>
-                  <ul>
-                <span class="currentSauce">
+                <p>Your Toppings</p>
+                <ul>
+                <span class="currentPizza">
                 </span>
                 </ul>
-                <div class="cheese-info">
-                  <p>Cheese</p>
-                  <ul>
-                    <span class="currentCheese">
-                    </span>
-                  </ul>
-                </div>
-                <div class="veggies-info">
-                  <p>Veggies</p>
-                  <ul>
-                    <span class="currentVeggies">
-                    </span>
-                  </ul>
-                </div>
-                <div class="meats-info">
-                  <p>Meat</p>
-                  <ul>
-                    <span class="currentMeats">
-                      <li>Smoked Ham</li>
-                    </span>
-                  </ul>
-                </div>
-                <div class="seasoning-info">
-                  <p>Special Seasonings</p>
-                  <ul>
-                    <span class="currentSeasoning">
-                      <li>Parmesean Cheese</li>
-                    </span>
-                  </ul>
-                </div>
               </div>
               <div class="col col-md-4 purchase-col">
                 <div class="choosingSize">
@@ -217,15 +188,17 @@
                   <label class="radio"><input type="radio" name="choosingSize" value="Mario">Mario</label>
                   <label class="radio"><input type="radio" name="choosingSize" value="Bowser">Bowser</label>
                 </div>
-                <button class="btn btn-lg" type="submit">Confirm Order</button>
+                <div class="update-order">
+                  <p>Process Order</p>
+                </div>
               </div>
+
               <div class="col-md-4 totals-display">
-                <p>Sauce extras: $<span class="sauceTotal"></span></p>
+                <!-- <p>Sauce extras: $<span class="sauceTotal"></span></p>
                 <p>Cheese extras: $<span class="cheeseTotal"></span></p>
                 <p>Veggies extras: $<span class="veggiesTotal"></span></p>
                 <p>Meats extras: $<span class="meatsTotal"></span></p>
-                <p>Seasonings extras: $<span class="seasoningTotal"></span></p>
-                <br>
+                <p>Seasonings extras: $<span class="seasoningTotal"></span></p> -->
                 <p class="totalAmount">Total Amount: $<span class="total"></span></p>
               </div>
             </div>

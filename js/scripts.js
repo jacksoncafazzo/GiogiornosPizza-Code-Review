@@ -4,190 +4,145 @@ function FlipPizza (pizzaBase, toppings, toppingPrices) {
   this.toppingPrices = toppingPrices;
 }
 
-// function Topping (sauce, cheese, veggie, meat, seasoning) {
-//   this.sauce = sauce;
-//   this.cheese = cheese;
-//   this.veggie = veggie;
-//   this.meat = meat;
-//   this.seasoning = seasoning;
-// }
-
 FlipPizza.prototype.getPizzaPrice = function () {
   var pizzaPrice = 0;
-  debugger;
-  var toppingPrices = [1,1,1,1,1];
-  for (var i = 0; i < this.toppings.length; i++) {
-  pizzaPrice = pizzaPrice + this.toppingPrices[i];
+  // var sauceTotal = 0;
+  // var cheeseTotal = 0;
+  // var veggiesTotal = 0;
+  // var meatsTotal = 0;
+  // var seasoningTotal = 0;
+
+
+  for (var i = 0; i < this.toppingPrices.length; i++) {
+    pizzaPrice = pizzaPrice + this.toppingPrices[i];
+  }
+  if (this.pizzaBase === "Toad") {
+    pizzaPrice = pizzaPrice + 4;
+  } else if (this.pizzaBase === "Princess") {
+    pizzaPrice = pizzaPrice + 8;
+  } else if (this.pizzaBase === "Yoshi") {
+    pizzaPrice = pizzaPrice + 12;
+  } else if (this.pizzaBase === "Mario") {
+    pizzaPrice = pizzaPrice + 16;
+  } else if (this.pizzaBase === "Bowser") {
+    pizzaPrice = pizzaPrice + 20;
+  } else {
+    alert("Best start with a size");
   }
 
 
-  $(".sauceTotal").text(toppingPrices[0]);
-  $(".cheeseTotal").text(toppingPrices[1]);
-  $(".veggiesTotal").text(toppingPrices[2]);
-  $(".meatsTotal").text(toppingPrices[3]);
-  $(".seasoningTotal").text(toppingPrices[4]);
-  for (var i = 0; i < this.pizzaBase.length; i++) {
-    if (this.pizzaBase[0] === "Toad") {
-      pizzaPrice = pizzaPrice + 4;
-      break;
-    } else if (this.pizzaBase[1] === "Princess") {
-      pizzaPrice = pizzaPrice + 8;
-    } else if (this.pizzaBase[2] === "Yoshi") {
-      pizzaPrice = pizzaPrice + 12;
-    } else if (this.pizzaBase[3] === "Mario") {
-      pizzaPrice = pizzaPrice + 16;
-    } else if (this.pizzaBase[4] === "Bowser") {
-      pizzaPrice = pizzaPrice + 20;
-      break;
-    } else {
-      alert("You forgot to choose a size");
-    }
-  }
 
-
-  $(".total").empty();
-  $(".total").append(pizzaPrice);
+  $(".total").text(pizzaPrice);
 
   return pizzaPrice;
 }
 
-
-
-
-// *******************
-  //   sauce.push($(this).attr('name'));
-  // });
-  // var regular = [];
-  // var plus = []
-  // var toppings = {};
-  // debugger;
-  // var tempRegular = "" + topping + " input:checked";
-  // var capitol = topping.charAt(0);
-  // capitol = capitol.toUpperCase();
-  // var plusString = capitol.concat(topping.slice(1));
-  // var tempPlus = "plus" + plusString + " input:checked";
-  // $("." + tempRegular + "").each(function () {
-  //   regular.push($(this).attr("name"));
-  // });
-  // $("" + tempPlus + "").each(function () {
-  //   plus.push($(this).attr("name"));
-  // });
-  // return regular, plus;
-//
-// function whereToPut formula (pizza, toppingType) {
-//   var regularList = pizza.getOwnPropertyNames(pizza.toppingType.regular)
-//   var plusList = pizza.getOwnPropertyNames(pizza.toppingType.plus)
-//
-// //  $(".sauce input:checkbox").each( function () {
-//     for (var i = 0; i < regularList.length; i++) {
-//       if (this.name === regularList[i]) {
-//
-//       }
-//         Object.defineProperties(pizza.toppingType.regular, regularList[i])
-//
-//     }
-//     for (var i = 0; i < plusList.length; i++) {
-//       if (this.name === plusList[i]) {
-//
-//       }
-//     }
-//       if (this.name === plusList[i]) {
-//         Object.defineProperties(pizza.toppingType.plus, plusList[i])
-//
-//       }
-//   });
-// }
-
-
 $(document).ready(function () {
-
   $("#noSauce").click(function() {
-    $(".sauce-info").empty();
-    $("input:checkbox.sauce").attr('checked', false);
+    $("input:checkbox.sauces").attr('checked', false);
   });
 
   $("#noCheese").click(function() {
-    $(".cheese-info").empty();
-    $("input:checkbox.cheese").attr('checked', false);
+    $("input:checkbox.cheeses").attr('checked', false);
   });
 
   $("#noVeggies").click(function() {
-    $(".veggies-info").empty();
     $("input:checkbox.veggies").attr('checked', false);
   });
 
   $("#noMeats").click(function() {
-    $(".meats-info").empty();
     $("input:checkbox.meats").attr('checked', false);
   });
 
   $("#noSeasoning").click(function() {
-    $(".seasoning-info").empty();
-    $("input:checkbox.seasoning").attr('checked', false);
+    $("input:checkbox.seasonings").attr('checked', false);
   });
 
   $(".clear-pizza").click(function (event) {
     $("ul").empty();
+    $(".total").empty();
     $("input:checkbox").attr("checked", false);
-    console.log(pizza);
-    pizza = {};
-    console.log(pizza);
   });
 
-  $("input:checkbox").click(function (event) {
-    // get the radio size value
-    var toppingChecks = $("input:radio");
-    for (var i = 0; i < sizes.length; i++) {
-      if ($(toppingChecks[i]).prop("checked") === true) {
-        var pizzaSize = $("input:radio:checked").val();
+  $(".update-order").click(function (event) {
+    $("ul").empty();
+    var sizeRadio = $("input:radio");
+    for (var i = 0; i < sizeRadio.length; i++) {
+      if ($(sizeRadio[i]).prop("checked") === true) {
+        var pizzaBase = $("input:radio:checked").val();
+        break;
       }
     }
-
-    var toppings = ["Sauce","Cheese","Veggies","Meat","Seasonings"];
-    var toppingPrices = [1,1,1,1,1];
-    var pizza = new FlipPizza(pizzaBase, toppings, toppingPrices);
-    var toppingSections = ["sauces","cheeses","veggies","meats","seasoning"];
     var custToppingSection = $(this).prop("class");
     var custTopping = $(this).prop("name");
     var toppingSection = $(this).prop("class");
+    var toppings = [];
+    var toppingPrices = [];
+
     $("input:checkbox:checked").each(function () {
-      var section = $(this).prop("class");
-      if (section === "sauces") {
-        $(".currentSauce").append('<li>' + this.name + '</li>');
-        toppings.cheese = this.name;
+      if ($(this).prop("id") === "plus") {
+        toppingPrices.push(2);
       }
-      if (section === "cheeses") {
-        $(".currentCheese").push('<li>' + this.name + '</li>');
-        toppings.cheese = this.name;
-      }
-      if (section === "veggies") {
-        $(".currentVeggies").push('<li>' + this.name + '</li>');
-        toppings.veggie = this.name ;
-      }
-      if (section === "meats") {
-        $(".currentMeats").push('<li>' + this.name + '</li>');
-        toppings.meat = this.name ;
-      }
-      if (section === "seasoning") {
-        $(".currentSeasoning").push('<li>' + this.name + '</li>');
-        toppings.seasoning = this.name;
-      }
+      $(".currentPizza").append('<li>' + this.name + '</li>');
+        toppings.push(this.name);
     });
-    var pizza = new FlipPizza(toppings, pizzaSize);
+
+    var pizza = new FlipPizza(pizzaBase, toppings, toppingPrices)
     pizzaTotal = pizza.getPizzaPrice();
-
-    console.log(pizzaTotal);
-
-
-
-    console.log("Pizza size is: " + pizzaSize);
-
-
-    console.log(pizza);
+    return pizzaTotal;
   });
-
+  event.preventDefault();
 
 });
+
+
+
+// if (section === "cheeses") {
+//   $(".currentCheese").push('<li>' + this.name + '</li>');
+//   toppings.push(this.name);
+//   toppingPrices.push(1)
+// }
+// if (section === "veggies") {
+//   $(".currentVeggies").push('<li>' + this.name + '</li>');
+//   toppings.push(this.name);
+//   toppingPrices.push(1)
+// }
+// if (section === "meats") {
+//   $(".currentMeats").push('<li>' + this.name + '</li>');
+//   toppings.push(this.name);
+//   toppingPrices.push(1)
+// }
+// if (section === "seasoning") {
+//   $(".currentSeasoning").push('<li>' + this.name + '</li>');
+//   toppings.push(this.name);
+//   toppingPrices.push(1)
+// }
+
+
+
+// var pizzaPrice = sauceTotal;
+// for (i; i < 12; i++) {
+//   var cheeseTotal = cheeseTotal + this.toppingPrices[i];
+// }
+// pizzaPrice = pizzaPrice + cheeseTotal;
+// for (i; i < 27; i++) {
+//   var veggiesTotal = pizzaPrice + this.toppingPrices[i];
+// }
+// pizzaPrice = pizzaPrice + veggiesTotal;
+// for (i; i < 38; i++) {
+//   meatsTotal = pizzaPrice + this.toppingPrices[i];
+// }
+// pizzaPrice = pizzaPrice + veggiesTotal;
+// for (i; i < 47; i++) {
+//   seasoningTotal = pizzaPrice + this.toppingPrices[i];
+// }
+// pizzaPrice = pizzaPrice + seasoningTotal;
+
+// $(".sauceTotal").text(sauceTotal);
+// $(".cheeseTotal").text(cheeseTotal);
+// $(".veggiesTotal").text(veggiesTotal);
+// $(".meatsTotal").text(meatsTotal);
+// $(".seasoningTotal").text(seasoningTotal);
 
 //
 
